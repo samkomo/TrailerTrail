@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSMutableData *_responseData;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (NSURLConnection*)initiateURLConnection:(NSURL*)jsonUrl;
 
 @end
 

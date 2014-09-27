@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *masterFilmList;
 
 @end
 

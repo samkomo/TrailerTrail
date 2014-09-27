@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FilmDataService.h"
 
 @interface ViewController ()
 
@@ -14,9 +15,21 @@
 
 @implementation ViewController
 
+-(NSMutableArray *)masterFilmList{
+    if (!_masterFilmList) {
+        _masterFilmList = [[NSMutableArray alloc] init];
+        
+    }
+    return _masterFilmList;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    FilmDataService *service = [[FilmDataService alloc] init];
+    self.masterFilmList = [service selectFromJSon:@"t=True%20Grit"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
