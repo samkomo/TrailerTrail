@@ -41,17 +41,18 @@
 
     NSString *json = [NSString stringWithContentsOfURL:jsonUrl encoding:NSUTF8StringEncoding error:&error];
     
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:json] options:kNilOptions error:&error];
-        if (dict)
-    {
+    NSDictionary *dict = nil;
+    if (json) {
+        dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:json] options:kNilOptions error:&error];
+    }
+    
+    
+    if (dict) {
         
         for (int i = 0; i<[dict count]; i++) {
             PreviewFilm * newDataModel = [[PreviewFilm alloc] initWithAttributes:dict];
             [masterList addObject:newDataModel];
         }
-        
-     
-        
         
     }
 

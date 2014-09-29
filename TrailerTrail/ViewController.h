@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : BaseViewController
+
+@property(nonatomic,weak)IBOutlet UITableView *myTableView;
 
 @property (strong, nonatomic) NSMutableArray *masterFilmList;
 
