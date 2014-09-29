@@ -11,7 +11,11 @@
 @interface FilmListViewController : BaseViewController
 
 @property(nonatomic,weak)IBOutlet UITableView *myTableView;
+@property (weak , nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *masterFilmList;
+
+
+-(void) createSearchBar;
 
 @end

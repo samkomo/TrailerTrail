@@ -20,5 +20,5 @@
 
 -(NSMutableArray *) selectFromJSon:(NSString*)title;
 +(NSString *)baseAPIUrl;
-
+-(NSString *) getJsonDataString: (NSString *)urlParam;
 @end

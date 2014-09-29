@@ -22,6 +22,7 @@
 		A18C330C19D5C84C00E452BB /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C330B19D5C84C00E452BB /* Utilities.m */; };
 		A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C331019D5CCF200E452BB /* PreviewFilm.m */; };
 		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
+		A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -68,6 +69,8 @@
 		A18C331019D5CCF200E452BB /* PreviewFilm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewFilm.m; path = Model/PreviewFilm.m; sourceTree = "<group>"; };
 		A18FBC3119D983D900F57B51 /* FilmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmListViewController.h; sourceTree = "<group>"; };
 		A18FBC3219D983D900F57B51 /* FilmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListViewController.m; sourceTree = "<group>"; };
+		A18FBC3A19D99F8700F57B51 /* BodyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyViewCell.h; sourceTree = "<group>"; };
+		A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyViewCell.m; sourceTree = "<group>"; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				180FE98F19D74BC9003638E9 /* BaseViewController.m */,
 				A18FBC3119D983D900F57B51 /* FilmListViewController.h */,
 				A18FBC3219D983D900F57B51 /* FilmListViewController.m */,
+				A18FBC3A19D99F8700F57B51 /* BodyViewCell.h */,
+				A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */,
 				A18C330419D5B99C00E452BB /* Film.m in Sources */,
 				A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */,
+				A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */,
 				A13BAD3C19D6CB6C00FB4C7F /* FilmDataService.m in Sources */,
 				A18C32E219D5B68100E452BB /* AppDelegate.m in Sources */,
 				A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */,
@@ -456,7 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -467,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
