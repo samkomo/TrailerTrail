@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="5oi-Hu-nnu">
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="eYJ-3X-egT">
->>>>>>> FETCH_HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="eYJ-3X-egT">
     <dependencies>
         <deployment version="1536" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Film List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="FilmListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -39,28 +35,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-<<<<<<< HEAD
-                    <navigationItem key="navigationItem" id="PC6-Zg-fHE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="834" y="114"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="waU-8Q-9dK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5oi-Hu-nnu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m2j-md-faM">
-=======
                     <navigationItem key="navigationItem" id="ywy-BY-1Og"/>
                     <connections>
-                        <outlet property="myTableView" destination="mgZ-mc-PEg" id="uv9-ea-g68"/>
+                        <outlet property="myTableView" destination="mgZ-mc-PEg" id="h7t-Yk-3mf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="7"/>
+            <point key="canvasLocation" x="511" y="-53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vyp-wE-li6">
@@ -68,27 +50,17 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYJ-3X-egT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dO3-IV-kBQ">
->>>>>>> FETCH_HEAD
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-<<<<<<< HEAD
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="p6R-vp-WKO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-Ga-ILg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="179" y="98"/>
-=======
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="4za-zI-wtW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOu-w1-MZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="7"/>
->>>>>>> FETCH_HEAD
+            <point key="canvasLocation" x="98" y="-53"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -21,6 +21,7 @@
 		A18C330919D5C73100E452BB /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C330819D5C73100E452BB /* BaseEntity.m */; };
 		A18C330C19D5C84C00E452BB /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C330B19D5C84C00E452BB /* Utilities.m */; };
 		A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C331019D5CCF200E452BB /* PreviewFilm.m */; };
+		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -65,6 +66,8 @@
 		A18C330D19D5C8A300E452BB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A18C330F19D5CCF200E452BB /* PreviewFilm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewFilm.h; path = Model/PreviewFilm.h; sourceTree = "<group>"; };
 		A18C331019D5CCF200E452BB /* PreviewFilm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewFilm.m; path = Model/PreviewFilm.m; sourceTree = "<group>"; };
+		A18FBC3119D983D900F57B51 /* FilmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmListViewController.h; sourceTree = "<group>"; };
+		A18FBC3219D983D900F57B51 /* FilmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListViewController.m; sourceTree = "<group>"; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 			children = (
 				180FE98E19D74BC9003638E9 /* BaseViewController.h */,
 				180FE98F19D74BC9003638E9 /* BaseViewController.m */,
+				A18FBC3119D983D900F57B51 /* FilmListViewController.h */,
+				A18FBC3219D983D900F57B51 /* FilmListViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				180FE99019D74BC9003638E9 /* BaseViewController.m in Sources */,
 				A18C32E519D5B68100E452BB /* ViewController.m in Sources */,
 				A18C330919D5C73100E452BB /* BaseEntity.m in Sources */,
+				A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */,
 				A18C330419D5B99C00E452BB /* Film.m in Sources */,
 				A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */,
 				A13BAD3C19D6CB6C00FB4C7F /* FilmDataService.m in Sources */,

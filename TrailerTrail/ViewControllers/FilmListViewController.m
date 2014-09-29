@@ -1,19 +1,15 @@
 //
-//  ViewController.m
+//  FilmListViewController.m
 //  TrailerTrail
 //
-//  Created by ilabadmin on 9/26/14.
+//  Created by ilabadmin on 9/29/14.
 //  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FilmListViewController.h"
 #import "FilmDataService.h"
 
-@interface ViewController ()
-
-@end
-
-@implementation ViewController
+@implementation FilmListViewController
 
 -(NSMutableArray *)masterFilmList{
     if (!_masterFilmList) {
@@ -27,11 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-
-    [self showActivityIndicator];
-
     
-    [self fetchData:@"t=True%20Grit"];
+    [self showActivityIndicator];
+    
+    
+    [self fetchData:@"s=True%20Grit"];
     
 }
 
@@ -51,7 +47,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-
+            
             [self showProgressHUDCompleteMessage: (self.masterFilmList.count == 0) ? NSLocalizedString(@"No Internet connection", @"Informing the user a process has failed") : nil];
             
             [self.myTableView reloadData];
