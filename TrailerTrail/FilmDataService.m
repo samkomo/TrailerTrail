@@ -37,6 +37,7 @@
 
     NSString *json = [NSString stringWithContentsOfURL:jsonUrl encoding:NSUTF8StringEncoding error:&error];
     
+<<<<<<< HEAD
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:json] options:kNilOptions error:&error];
     
     NSArray *searchResult = [dict objectForKeyedSubscript:@"Search"];
@@ -44,6 +45,15 @@
     
     if ([searchResult count])
     {
+=======
+    NSDictionary *dict = nil;
+    if (json) {
+        dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:json] options:kNilOptions error:&error];
+    }
+    
+    
+    if (dict) {
+>>>>>>> FETCH_HEAD
         
         for (NSDictionary *movie in searchResult) {
             if (movie) {
@@ -54,7 +64,10 @@
 
         }
         
+<<<<<<< HEAD
         
+=======
+>>>>>>> FETCH_HEAD
     }
 
     return masterList;
