@@ -22,12 +22,8 @@
 {
     NSMutableArray *masterList= [[NSMutableArray alloc] init];
     
-    
-//    NSURL *jsonUrl = [NSURL URLWithString:[LOCAL_SERVER_URL stringByAppendingString:category]];
-
     NSString *url = [FilmDataService baseAPIUrl];
     
-//    url = [url stringByReplacingOccurrencesOfString:@"kenya" withString:category];
     url = [url stringByAppendingString:title];
 
     NSURL *jsonUrl = [NSURL URLWithString:url];
@@ -42,15 +38,21 @@
     NSString *json = [NSString stringWithContentsOfURL:jsonUrl encoding:NSUTF8StringEncoding error:&error];
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:json] options:kNilOptions error:&error];
-        if (dict)
+    
+    NSArray *searchResult = [dict objectForKeyedSubscript:@"Search"];
+    
+    
+    if ([searchResult count])
     {
         
-        for (int i = 0; i<[dict count]; i++) {
-            PreviewFilm * newDataModel = [[PreviewFilm alloc] initWithAttributes:dict];
-            [masterList addObject:newDataModel];
+        for (NSDictionary *movie in searchResult) {
+            if (movie) {
+                PreviewFilm * newDataModel = [[PreviewFilm alloc] initWithAttributes:movie];
+                [masterList addObject:newDataModel];
+
+            }
+
         }
-        
-     
         
         
     }
