@@ -28,10 +28,15 @@
 #import <UIKit/UIKit.h>
 #import "WKTextDemoView.h"
 #import "BaseViewController.h"
+#import "PreviewFilm.h"
+#import <MediaPlayer/MediaPlayer.h>
+
 
 @interface FilmDetailViewController : BaseViewController {
     WKTextDemoView *demoView;
 }
 
-
+@property (nonatomic, strong) PreviewFilm *film;
+@property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
+-(void)playMovie:(UITapGestureRecognizer *)gesture;
 @end

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *poster;
 @property (strong, nonatomic) NSString *language;
 @property (strong, nonatomic) NSString *imdbVotes;
+@property (strong, nonatomic) NSString *genre;
 
 @property (strong, nonatomic) NSMutableArray *previewFilms;
 

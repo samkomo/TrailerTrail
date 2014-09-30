@@ -26,36 +26,40 @@
     NSString *s_json = [self getJsonDataString:title];
     NSError *error = nil;
     
-    NSDictionary *s_dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:s_json] options:kNilOptions error:&error];
-    
-    NSArray *searchResult = [s_dict objectForKeyedSubscript:@"Search"];
-    
-    
-    if ([searchResult count])
-    {
+    if ([self getSimpleJSON:s_json]) {
+        NSDictionary *s_dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:s_json] options:kNilOptions error:&error];
         
-        for (NSDictionary *movie in searchResult) {
-            if (movie) {
-                Film * newDataModel = [[Film alloc] initWithAttributes:movie];
-                NSLog(@"%@",newDataModel.imdbID);
+        NSArray *searchResult = [s_dict objectForKeyedSubscript:@"Search"];
+        
+        
+        if ([searchResult count])
+        {
+            
+            for (NSDictionary *movie in searchResult) {
+                if (movie) {
+                    Film * newDataModel = [[Film alloc] initWithAttributes:movie];
+                    
+                    NSString *i_json = [self getJsonDataString:[NSString stringWithFormat:@"i=%@",newDataModel.imdbID]];
+                    if ([self getSimpleJSON:i_json]) {
+                        NSDictionary *i_Dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:i_json] options:kNilOptions error:&error];
+                        
+                        PreviewFilm *i_film = [[PreviewFilm alloc] initWithAttributes:i_Dict];
+                        
+                        [masterList addObject:i_film];
+                    }
+                    
+                    
+                    
+                    
+                }
                 
-                NSString *i_json = [self getJsonDataString:[NSString stringWithFormat:@"i=%@",newDataModel.imdbID]];
-                
-                NSDictionary *i_Dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:i_json] options:kNilOptions error:&error];
-                
-                PreviewFilm *i_film = [[PreviewFilm alloc] initWithAttributes:i_Dict];
-                                
-                [masterList addObject:i_film];
-                
-                
-
             }
-
+            
+            
         }
-        
 
     }
-
+    
     return masterList;
     
 }
@@ -67,7 +71,6 @@
     
     url = [url stringByAppendingString:urlParam];
     
-    NSLog(@"%@",url);
     NSURL *jsonUrl = [NSURL URLWithString:url];
     
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -79,7 +82,6 @@
     NSError *error = nil;
     jsonString= [NSString stringWithContentsOfURL:jsonUrl encoding:NSUTF8StringEncoding error:&error];
     
-    NSLog(@"%@",jsonString);
     
     return jsonString;
     

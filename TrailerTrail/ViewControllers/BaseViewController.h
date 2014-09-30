@@ -25,7 +25,7 @@
 -(void)hideProgressHUD:(BOOL)animated;
 -(void)showProgressHUDCompleteMessage:(NSString *)message;
 -(void)showProgressHUDWithMessage:(NSString *)message;
-
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock;
 
 
 

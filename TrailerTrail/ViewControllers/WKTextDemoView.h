@@ -53,7 +53,7 @@
 @property (nonatomic, readonly) UIImageView *shareImageView;
 
 @property (nonatomic, readonly) UILabel *releasedLabel;
-@property (nonatomic, readonly) UIImageView *frmCommentImageView;
+@property (nonatomic, readonly) UIImageView *imgPlayTailer;
 @property (nonatomic, readonly) UILabel *commentsLabel;
 
 

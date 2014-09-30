@@ -10,6 +10,7 @@
 #import "FilmDataService.h"
 #import "BodyViewCell.h"
 #import "PreviewFilm.h"
+#import "FilmDetailViewController.h"
 
 @implementation FilmListViewController
 @synthesize searchBar = _searchBar;
@@ -37,6 +38,8 @@
     [self.myTableView addGestureRecognizer:tap];
     [tap setCancelsTouchesInView:NO];
     [tap setDelaysTouchesEnded:NO];
+    
+//    [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
 }
 
@@ -106,20 +109,42 @@
     
     [[cell titleLabel] setText:movie.title];
     [[cell timeLabel] setText:movie.type];
-    
+    self.myTableView.separatorColor = [UIColor whiteColor];
     
     return cell;
     
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"cell";
+//    static NSString *CellIdentifier = @"cell";
     
     
     return 110;
 }
 
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [self performSegueWithIdentifier:@"showDetails" sender:self];
+    
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]){
+        
+        
+        [(FilmDetailViewController *)segue.destinationViewController setFilm:[self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row]];
+        
+        NSLog(@"%d",[self.myTableView indexPathForSelectedRow].row);
+        
+    }
+}
 
 -(void)fetchData: (NSString *)parameters{
     [self showActivityIndicator];
@@ -131,7 +156,17 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             
-            [self showProgressHUDCompleteMessage: (self.masterFilmList.count == 0) ? NSLocalizedString(@"No Internet connection", @"Informing the user a process has failed") : nil];
+            [self showProgressHUDCompleteMessage: (self.masterFilmList.count == 0) ? NSLocalizedString(@"No films found!", @"Informing the user a process has failed") : nil];
+            
+//            [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//            noResultText = NSLocalizedString(@"No results for:", "No results for:");
+//            noResultText = [noResultText stringByAppendingString:@" "];
+//            noResultText = [noResultText stringByAppendingString:searchBar.text];
+//            tryGoogle= NSLocalizedString(@"Try searching with Google (online).", "Try searching with Google (online).");
+//            imgGoogleName=@"iPhoneIconGoogleLogo.png";
+//            isSearching=true;
+//            [self.myTableView reloadData];
+//            rowHeight = NO;
             
             [self.myTableView reloadData];
             
@@ -141,25 +176,13 @@
     
 }
 
-
-
-
-- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+-(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                            
-                               if ( !error ){
-                                   UIImage *image = [[UIImage alloc] initWithData:data];
-                                   completionBlock(YES,image);
-                               } else{
-                                   completionBlock(NO,nil);
-                               }
-                           }];
+    return [self.masterFilmList objectAtIndex:theIndex];
 }
+
+
+
 
 -(void)hideKeyboard{
     [self.searchBar resignFirstResponder];

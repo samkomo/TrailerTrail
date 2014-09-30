@@ -57,12 +57,12 @@
                   symbolName = "__28-[ViewController fetchData:]_block_invoke"
                   moduleName = "TrailerTrail"
                   urlString = "file:///Users/ilabadmin/Documents/IBM-Project/TrailerTrail/TrailerTrail/ViewController.m"
-                  timestampString = "433699988.013391"
+                  timestampString = "433771640.059048"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "170">
+                  offsetFromSymbolStart = "194">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,12 +71,12 @@
                   symbolName = "__28-[ViewController fetchData:]_block_invoke_2"
                   moduleName = "TrailerTrail"
                   urlString = "file:///Users/ilabadmin/Documents/IBM-Project/TrailerTrail/TrailerTrail/ViewController.m"
-                  timestampString = "433699988.013546"
+                  timestampString = "433771640.059231"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "21">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -103,29 +103,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrailerTrail/ViewControllers/FilmListViewController.m"
-            timestampString = "433702648.103511"
+            filePath = "TrailerTrail/ViewControllers/FilmDetailViewController.m"
+            timestampString = "433771150.120771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrailerTrail/FilmDataService.m"
-            timestampString = "433695857.42216"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-selectFromJSon:"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-playMovie:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -47,7 +47,7 @@
 @synthesize sLine1 = _sLine1, sLine2 = _sLine2;
 @synthesize fbkImageView = _fbkImageView, tweeterImageView = _tweeterImageView, gplusImageView = _gplusImageView, emailImageView = _emailImageView, shareImageView = _shareImageView;
 @synthesize releasedLabel = _releasedLabel;
-@synthesize frmCommentImageView =_frmCommentImageView;
+@synthesize imgPlayTailer =_imgPlayTailer;
 @synthesize commentsLabel =_commentsLabel;
 
 - (id)initWithFrame:(CGRect)frame
@@ -56,7 +56,7 @@
         _verticalPadding = 10.0f;
         _horizontalPadding = 10.0f;
         _socialImgWidth = 48.0f;
-        _socialImgHeight = 0.0f;
+        _socialImgHeight = 48.0f;
         
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         [_scrollView setBackgroundColor:[UIColor colorWithRed:0xE4 / 255.0f
@@ -82,6 +82,7 @@
         [_plotTrailerImage setBackgroundColor:[UIColor grayColor]];
         [_plotTrailerImage setContentMode:UIViewContentModeScaleAspectFill];
         [_plotTrailerImage setClipsToBounds:YES];
+        [_plotTrailerImage setUserInteractionEnabled:YES];
         //_storyImageView.translatesAutoresizingMaskIntoConstraints = NO;
         [_scrollView addSubview:_plotTrailerImage];
         
@@ -151,8 +152,9 @@
         [_releasedLabel setTextColor:[UIColor blueColor]];
         [_scrollView addSubview:_releasedLabel];
         
-        _frmCommentImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        [_scrollView addSubview:_frmCommentImageView];
+        _imgPlayTailer = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _imgPlayTailer.userInteractionEnabled = YES;
+        [_plotTrailerImage addSubview:_imgPlayTailer];
         
         _commentsLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [_commentsLabel setBackgroundColor:[UIColor clearColor]];
@@ -174,32 +176,34 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_textLabel release];
-    [_scrollView release];
-    [_verticalScrollBar release];
-
-    [_sLine1 release];
-    [_sLine1 release];
-    
-    [_genreLabel release];
-    [_runtimeLabel release];
-    [_plotTrailerImage release];
-    [_posterImage release];
-    [_fbImageView release];
-    [_titleLabel release];
-    [_genreLabel release];
-    
-    [_fbkImageView release];
-    [_tweeterImageView release];
-    [_gplusImageView release];
-    [_emailImageView release];
-    [_shareImageView release];
-
-    
-    [super dealloc];
-}
+//- (void)dealloc
+//{
+//    [super dealloc];
+//
+//    
+//
+//    [_sLine1 release];
+//    [_sLine1 release];
+//    
+//    [_genreLabel release];
+//    [_runtimeLabel release];
+//    [_plotTrailerImage release];
+//    [_posterImage release];
+//    [_fbImageView release];
+//    [_titleLabel release];
+//    [_genreLabel release];
+//    
+//    [_fbkImageView release];
+//    [_tweeterImageView release];
+//    [_gplusImageView release];
+//    [_emailImageView release];
+//    [_shareImageView release];
+//
+//    [_textLabel release];
+//    [_scrollView release];
+//    [_verticalScrollBar release];
+//    
+//    }
 
 - (void)layoutSubviews
 {
@@ -247,7 +251,7 @@
     
     // Center the label in the screen
     [_textLabel setFrame:CGRectMake((bounds.size.width / 2) - (columnWidth / 2), (titleSize.height + (_plotTrailerImage.frame.size.height+_posterImage.frame.size.height +(_verticalPadding*2))),
-                                    columnWidth, textSize.height)];
+                                    columnWidth-20, textSize.height)];
 
     
     double x = (bounds.size.width) - (timeSize.width + ((bounds.size.width / 2) - (columnWidth / 2)));
@@ -265,24 +269,24 @@
     
     //social media
     double xSoc = (bounds.size.width / 2) - (((_socialImgWidth *5) + (_horizontalPadding*4)) / 2);
-    double ySoc = textSize.height + titleSize.height + _plotTrailerImage.frame.size.height + _fbImageView.frame.size.height + authorSize.height ;
+    double ySoc = (titleSize.height + (_plotTrailerImage.frame.size.height+_posterImage.frame.size.height +(_verticalPadding *6)));
     
-//    [_fbkImageView setFrame:CGRectMake(xSoc, ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
-//    
-//    [_tweeterImageView setFrame:CGRectMake(xSoc + _socialImgWidth + _horizontalPadding, ySoc+ (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
-//    
-//    [_gplusImageView setFrame:CGRectMake(xSoc + (_socialImgWidth * 2)+ (_horizontalPadding*2), ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
-//    
-//    [_emailImageView setFrame:CGRectMake(xSoc + (_socialImgWidth*3)+ (_horizontalPadding*3), ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
-//    
-//    
-//    [_shareImageView setFrame:CGRectMake(xSoc + (_socialImgWidth*4)+ (_horizontalPadding*4), textSize.height + titleSize.height + _plotTrailerImage.frame.size.height + _fbImageView.frame.size.height + authorSize.height + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
-//    
-//    
-//    [_frmCommentImageView setFrame:CGRectMake((bounds.size.width / 2) - (columnWidth / 2), ySoc + _socialImgHeight + webSize.height + (_verticalPadding * 9), columnWidth, _socialImgHeight)];
+    [_fbkImageView setFrame:CGRectMake(xSoc, ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
+    
+    [_tweeterImageView setFrame:CGRectMake(xSoc + _socialImgWidth + _horizontalPadding, ySoc+ (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
+    
+    [_gplusImageView setFrame:CGRectMake(xSoc + (_socialImgWidth * 2)+ (_horizontalPadding*2), ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
+    
+    [_emailImageView setFrame:CGRectMake(xSoc + (_socialImgWidth*3)+ (_horizontalPadding*3), ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
+    
+    
+    [_shareImageView setFrame:CGRectMake(xSoc + (_socialImgWidth*4)+ (_horizontalPadding*4), ySoc + (_verticalPadding * 7), _socialImgWidth, _socialImgHeight)];
+    
+    
+    [_imgPlayTailer setFrame:CGRectMake((_plotTrailerImage.frame.size.width / 2) - 22, (_plotTrailerImage.frame.size.height / 2) - 22, 44, 44)];
 
     
-    [_scrollView setContentSize:CGSizeMake(bounds.size.width, ySoc + _socialImgHeight + webSize.height+ _frmCommentImageView.frame.size.height + (_verticalPadding * 10))];
+    [_scrollView setContentSize:CGSizeMake(bounds.size.width, ySoc + _socialImgHeight + webSize.height+ _imgPlayTailer.frame.size.height + (_verticalPadding * 10))];
     
     
     [_scrollView setFrame:CGRectMake(0, 0, bounds.size.width, bounds.size.height)];

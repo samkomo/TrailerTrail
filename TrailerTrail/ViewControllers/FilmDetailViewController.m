@@ -31,6 +31,7 @@
 
 @implementation FilmDetailViewController
 
+@synthesize film=_film;
 
 - (void)loadView
 {
@@ -48,12 +49,25 @@
 //                                               encoding:NSUTF8StringEncoding
 //                                                  error:nil];
     
-    [[demoView titleLabel] setText:@"True Grit"];
-    [[demoView plotTrailerImage] setImage:[UIImage imageNamed:@"CORDmeet301013.jpg"]];
-    [[demoView runtimeLabel] setText:@"110 min"];
+    [[demoView titleLabel] setText:self.film.title];
+    
+    // download the image asynchronously
+    if (![self.film.poster  isEqual: @"N/A"]) {
+        [self downloadImageWithURL:[NSURL URLWithString:self.film.poster] completionBlock:^(BOOL succeeded, UIImage *image) {
+            if (succeeded) {
+                // change the image in the cell
+                [demoView plotTrailerImage].image = image;
+                [demoView posterImage].image = image;
+            }
+        }];
+    }
+    
+
+    
+    [[demoView runtimeLabel] setText:self.film.runtime];
     [[demoView fbImageView] setImage:[UIImage imageNamed:@"1399655270_comments.png"]];
-    [[demoView genreLabel] setText:@"Adventure, Drama, Western"];
-    [[demoView textLabel] setText:text];
+    [[demoView genreLabel] setText:self.film.genre];
+    [[demoView textLabel] setText:self.film.plot];
     
     [[demoView fbkImageView] setImage:[UIImage imageNamed:@"1399640891_facebook_circle_color.png"]];
     [[demoView tweeterImageView] setImage:[UIImage imageNamed:@"1399640970_twitter_circle_color.png"]];
@@ -62,12 +76,58 @@
     [[demoView shareImageView] setImage:[UIImage imageNamed:@"1399641044_647404-share.png"]];
     
     [[demoView releasedLabel] setText:@"22 Dec 2010"];
-    [[demoView frmCommentImageView] setImage:[UIImage imageNamed:@"frame.png"]];
+    [[demoView imgPlayTailer] setImage:[UIImage imageNamed:@"btnPlay_Small"]];
+    
+//    [[demoView imgPlayTailer] addTarget:self action:@selector(searchGoogle:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //create a tapgesture to release keyboard on tap
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playMovie:)];
+    [tap setNumberOfTouchesRequired:1];
+    [tap setDelegate:self];
+    [[demoView imgPlayTailer] addGestureRecognizer:tap];
+    [[demoView plotTrailerImage] addGestureRecognizer:tap];
+    [tap setCancelsTouchesInView:NO];
+    [tap setDelaysTouchesEnded:NO];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+
+-(void)playMovie:(UITapGestureRecognizer *)gesture
+{
+    NSURL *url = [NSURL URLWithString:
+                  @"http://www.ebookfrenzy.com/ios_book/movie/movie.mov"];
+    
+    _moviePlayer =  [[MPMoviePlayerController alloc]
+                     initWithContentURL:url];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(moviePlayBackDidFinish:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:_moviePlayer];
+    
+    _moviePlayer.controlStyle = MPMovieControlStyleDefault;
+    _moviePlayer.shouldAutoplay = YES;
+    [self.view addSubview:_moviePlayer.view];
+    [_moviePlayer setFullscreen:YES animated:YES];
+}
+
+- (void) moviePlayBackDidFinish:(NSNotification*)notification {
+    MPMoviePlayerController *player = [notification object];
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self
+     name:MPMoviePlayerPlaybackDidFinishNotification
+     object:player];
+    
+    if ([player
+         respondsToSelector:@selector(setFullscreen:animated:)])
+    {
+        [player.view removeFromSuperview];
+    }
 }
 
 @end

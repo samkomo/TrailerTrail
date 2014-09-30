@@ -11,7 +11,7 @@
 		180FE99419D75000003638E9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 180FE99319D75000003638E9 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18FA13BC19D9E07300BB9F95 /* FilmDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13BB19D9E07300BB9F95 /* FilmDetailsViewController.m */; };
 		18FA13BF19D9E96100BB9F95 /* FilmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13BE19D9E96100BB9F95 /* FilmDetailViewController.m */; };
-		18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13C419D9E9D500BB9F95 /* WKTextDemoView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13C419D9E9D500BB9F95 /* WKTextDemoView.m */; };
 		18FA13C819D9EA0200BB9F95 /* WKVerticalScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13C719D9EA0200BB9F95 /* WKVerticalScrollBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18FA13CB19D9EA2300BB9F95 /* WKAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13CA19D9EA2300BB9F95 /* WKAccessoryView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18FA13CE19D9EB5700BB9F95 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13CD19D9EB5700BB9F95 /* SWRevealViewController.m */; };
@@ -30,6 +30,7 @@
 		A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C331019D5CCF200E452BB /* PreviewFilm.m */; };
 		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
 		A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */; };
+		A18FBC3E19DACD9200F57B51 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -91,6 +92,7 @@
 		A18FBC3219D983D900F57B51 /* FilmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListViewController.m; sourceTree = "<group>"; };
 		A18FBC3A19D99F8700F57B51 /* BodyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyViewCell.h; sourceTree = "<group>"; };
 		A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyViewCell.m; sourceTree = "<group>"; };
+		A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18FBC3E19DACD9200F57B51 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +173,7 @@
 		A18C32D019D5B68100E452BB = {
 			isa = PBXGroup;
 			children = (
+				A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */,
 				A18C32DB19D5B68100E452BB /* TrailerTrail */,
 				A18C32F519D5B68100E452BB /* TrailerTrailTests */,
 				A18C32DA19D5B68100E452BB /* Products */,
@@ -316,6 +320,7 @@
 				TargetAttributes = {
 					A18C32D819D5B68100E452BB = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 6569EMN7G8;
 					};
 					A18C32F119D5B68100E452BB = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -510,10 +515,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,10 +530,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
