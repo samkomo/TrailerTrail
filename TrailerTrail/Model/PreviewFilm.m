@@ -20,6 +20,7 @@
 #define kLanguage @"Language"
 #define kimdbVotes @"imdbVotes"
 #define kGenre @"Genre"
+#define kImdbRating @"imdbRating"
 
 //tags to retrieve contents from the api items
 #define kTitle @"Title"
@@ -28,7 +29,7 @@
 #define kYear @"Year"
 
 @implementation PreviewFilm
-@synthesize rated=_rated, released=_released, runtime=_runtime, director=_director, writer=_writer, plot=_plot, poster=_poster, language=_language, imdbVotes=_imdbVotes, genre=_genre;
+@synthesize rated=_rated, released=_released, runtime=_runtime, director=_director, writer=_writer, plot=_plot, poster=_poster, language=_language, imdbVotes=_imdbVotes, genre=_genre, starRating =_starRating;
 
 -(NSMutableArray *) previewFilms{
     if(!_previewFilms){
@@ -44,7 +45,7 @@
         
         self.title = [attributes objectForKey:kTitle];
         self.imdbID =[attributes objectForKey:kImdbID];
-        self.year =[self extracIntegerValue:[attributes objectForKey:kYear]];
+        self.year =[attributes objectForKey:kYear];
         self.type =[attributes objectForKey:kType];
         self.rated =[attributes objectForKey:kRated];
         self.released =[attributes objectForKey:kReleased];
@@ -56,6 +57,7 @@
         self.language =[attributes objectForKey:kLanguage];
         self.imdbVotes =[attributes objectForKey:kimdbVotes];
         self.genre =[attributes objectForKey:kGenre];
+        self.starRating =[attributes objectForKey:kImdbRating];
     }
     return self;
 }

@@ -31,7 +31,7 @@
     [self showActivityIndicator];
     
     
-    [self fetchData:@"s=True%20Grit"];
+    [self fetchData:@"s=sweet"];
     
     //create a tapgesture to release keyboard on tap
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
@@ -39,8 +39,8 @@
     [tap setCancelsTouchesInView:NO];
     [tap setDelaysTouchesEnded:NO];
     
-//    [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
+
+    self.searchBar.tintColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,7 +108,15 @@
     }
     
     [[cell titleLabel] setText:movie.title];
-    [[cell timeLabel] setText:movie.type];
+    [[cell languageLabel] setText:movie.language];
+    [[cell typeLabel] setText:movie.year];
+    
+    [[cell starView] setImagesDeselected:@"0.png" partlySelected:@"bookmarks.png" fullSelected:@"bookmarks.png" andDelegate:self];
+	[[cell starView] displayRating:([movie.starRating intValue]%5)];
+    
+
+    [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+
     self.myTableView.separatorColor = [UIColor whiteColor];
     
     return cell;
@@ -141,7 +149,6 @@
         
         [(FilmDetailViewController *)segue.destinationViewController setFilm:[self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row]];
         
-        NSLog(@"%d",[self.myTableView indexPathForSelectedRow].row);
         
     }
 }
@@ -186,6 +193,10 @@
 
 -(void)hideKeyboard{
     [self.searchBar resignFirstResponder];
+}
+
+-(void)ratingChanged:(float)newRating {
+//	ratingLabel.text = [NSString stringWithFormat:@"Rating is: %1.1f", newRating];
 }
 
 @end

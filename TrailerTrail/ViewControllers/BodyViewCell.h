@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingView.h"
 
 @interface BodyViewCell : UITableViewCell
 
 @property (strong, nonatomic) UIImageView *imgTopStory;
-@property (strong, nonatomic) UILabel *titleLabel, *timeLabel;
+@property (strong, nonatomic) UILabel *titleLabel, *languageLabel, *typeLabel;
 @property (nonatomic, readwrite) CGFloat verticalPadding;
+@property (nonatomic, retain) RatingView *starView;
 
 @end

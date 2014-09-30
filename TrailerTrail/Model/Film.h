@@ -11,7 +11,7 @@
 @interface Film : BaseEntity
 
 @property (strong, nonatomic) NSString *title;
-@property (nonatomic) NSUInteger year;
+@property (strong, nonatomic) NSString *year;
 @property (strong, nonatomic) NSString *imdbID;
 @property (strong, nonatomic) NSString *type;
 

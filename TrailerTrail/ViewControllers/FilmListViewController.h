@@ -7,15 +7,18 @@
 //
 
 #import "BaseViewController.h"
+#import "RatingView.h"
 
 @interface FilmListViewController : BaseViewController
+{
+    RatingView *starView;
 
+}
 @property(nonatomic,weak)IBOutlet UITableView *myTableView;
 @property (weak , nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *masterFilmList;
 
-
--(void) createSearchBar;
+-(void)ratingChanged:(float)newRating; -(void) createSearchBar;
 
 @end

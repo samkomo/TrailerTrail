@@ -32,7 +32,7 @@
     if (self){
         self.title = [attributes objectForKey:kTitle];
         self.imdbID =[attributes objectForKey:kImdbID];
-        self.year =[[attributes objectForKey:kImdbID] integerValue];
+        self.year =[attributes objectForKey:kYear];
 //        self.year =[self extracIntegerValue:[attributes objectForKey:kYear]];
         self.type =[attributes objectForKey:kType];
     }

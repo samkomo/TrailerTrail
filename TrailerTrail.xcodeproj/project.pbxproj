@@ -16,6 +16,7 @@
 		18FA13CB19D9EA2300BB9F95 /* WKAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13CA19D9EA2300BB9F95 /* WKAccessoryView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18FA13CE19D9EB5700BB9F95 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13CD19D9EB5700BB9F95 /* SWRevealViewController.m */; };
 		18FA13D119D9ED5D00BB9F95 /* fillerati.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18FA13D019D9ED5D00BB9F95 /* fillerati.txt */; };
+		A13970AE19DAE67500C20C35 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13970AD19DAE67500C20C35 /* RatingView.m */; };
 		A13BAD3C19D6CB6C00FB4C7F /* FilmDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD3B19D6CB6C00FB4C7F /* FilmDataService.m */; };
 		A18C32DF19D5B68100E452BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C32DE19D5B68100E452BB /* main.m */; };
 		A18C32E219D5B68100E452BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C32E119D5B68100E452BB /* AppDelegate.m */; };
@@ -64,6 +65,8 @@
 		18FA13CC19D9EB5700BB9F95 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		18FA13CD19D9EB5700BB9F95 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		18FA13D019D9ED5D00BB9F95 /* fillerati.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillerati.txt; sourceTree = "<group>"; };
+		A13970AC19DAE67500C20C35 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		A13970AD19DAE67500C20C35 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		A13BAD3A19D6CB6C00FB4C7F /* FilmDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDataService.h; sourceTree = "<group>"; };
 		A13BAD3B19D6CB6C00FB4C7F /* FilmDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmDataService.m; sourceTree = "<group>"; };
 		A18C32D919D5B68100E452BB /* TrailerTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailerTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +164,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		A13970AF19DAE68300C20C35 /* Ratings */ = {
+			isa = PBXGroup;
+			children = (
+				A13970AC19DAE67500C20C35 /* RatingView.h */,
+				A13970AD19DAE67500C20C35 /* RatingView.m */,
+			);
+			name = Ratings;
+			sourceTree = "<group>";
+		};
 		A13BAD3D19D6CB7300FB4C7F /* DataService */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +265,7 @@
 		A18C336219D6BF0600E452BB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A13970AF19DAE68300C20C35 /* Ratings */,
 				18FA13CF19D9EBF000BB9F95 /* WK */,
 				180FE99119D75000003638E9 /* MBProgressHUD */,
 				A1D3D24719D6D91800037215 /* JSONKit */,
@@ -378,6 +391,7 @@
 				18FA13CB19D9EA2300BB9F95 /* WKAccessoryView.m in Sources */,
 				A18C32E519D5B68100E452BB /* ViewController.m in Sources */,
 				18FA13BC19D9E07300BB9F95 /* FilmDetailsViewController.m in Sources */,
+				A13970AE19DAE67500C20C35 /* RatingView.m in Sources */,
 				A18C330919D5C73100E452BB /* BaseEntity.m in Sources */,
 				A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */,
 				A18C330419D5B99C00E452BB /* Film.m in Sources */,
