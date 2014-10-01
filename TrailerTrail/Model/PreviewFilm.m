@@ -121,6 +121,20 @@ static NSMutableArray *_bookmark;
     return _bookmark;
 }
 
+-(BOOL)deleteStack:(PreviewFilm *)film{
+    
+    BOOL success = NO;
+    
+    if (_bookmarkedFilms != nil) {
+        if ([_bookmarkedFilms indexOfObject:film] != NSNotFound) {
+            [_bookmarkedFilms removeObject:film];
+            success = YES;
+        }
+    }
+    
+    return success;
+}
+
 
 +(id) unarchive{
 	NSString *filePath = [Utilities dataFilePathForFile:kBookMark];
@@ -128,13 +142,13 @@ static NSMutableArray *_bookmark;
 	NSMutableArray *arrBookmarkedFilms = nil;
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-		NSData *data = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+        NSData* decodedData = [NSData dataWithContentsOfFile: [Utilities dataFilePathForFile:kBookMark]];
+        if (decodedData) {
+            PreviewFilm* filmData = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+            return filmData;
+        }
+
 		
-		NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-		
-		arrBookmarkedFilms = [unarchiver decodeObjectForKey:kBookMark];
-		
-		[unarchiver finishDecoding];
     }
 	
 	return arrBookmarkedFilms;
@@ -143,19 +157,43 @@ static NSMutableArray *_bookmark;
 
 
 
--(void) archive{
++(void) archive{
 	NSMutableData *data = [[NSMutableData alloc] init];
 	NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
 	
-	[archiver encodeObject:self.bookmarkedFilms forKey:kBookMark];
+	[archiver encodeObject:self forKey:kBookMark];
 	[archiver finishEncoding];
 	
 	[data writeToFile:[Utilities dataFilePathForFile:kBookMark] atomically:YES];
 	
 }
 
--(void)saveLocally{
++ (instancetype)sharedFilmData {
+    static id sharedInstance = nil;
     
-    [self archive];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [self loadInstance];
+    });
+    
+    return sharedInstance;
+}
+
+
++(instancetype)loadInstance
+{
+    NSData* decodedData = [NSData dataWithContentsOfFile: [Utilities dataFilePathForFile:kBookMark]];
+    if (decodedData) {
+        PreviewFilm* filmData = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+        return filmData;
+    }
+    
+    return [[PreviewFilm alloc] init];
+}
+
+-(void)saveLocally
+{
+    NSData* encodedData = [NSKeyedArchiver archivedDataWithRootObject: self.bookmarkedFilms];
+    [encodedData writeToFile:[Utilities dataFilePathForFile:kBookMark] atomically:YES];
 }
 @end

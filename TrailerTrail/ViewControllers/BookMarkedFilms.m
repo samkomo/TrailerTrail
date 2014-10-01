@@ -1,19 +1,17 @@
 //
-//  FilmListViewController.m
+//  BookMarkedFilms.m
 //  TrailerTrail
 //
-//  Created by ilabadmin on 9/29/14.
+//  Created by ilabadmin on 10/1/14.
 //  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
-#import "FilmListViewController.h"
-#import "FilmDataService.h"
+#import "BookMarkedFilms.h"
 #import "BodyViewCell.h"
 #import "PreviewFilm.h"
 #import "FilmDetailViewController.h"
 
-@implementation FilmListViewController
-@synthesize searchBar = _searchBar;
+@implementation BookMarkedFilms
 
 -(NSMutableArray *)masterFilmList{
     if (!_masterFilmList) {
@@ -26,40 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Latest Films";
+    self.title = @"BookMarked Films";
+        
     
-    [self showActivityIndicator];
     
     
-    [self fetchData:@"s=tom and jerry"];
-    
-    //create a tapgesture to release keyboard on tap
-    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
-    [self.myTableView addGestureRecognizer:tap];
-    [tap setCancelsTouchesInView:NO];
-    [tap setDelaysTouchesEnded:NO];
-    
-
-    self.searchBar.tintColor = [UIColor redColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-#pragma mark - searchBar methods
 
-- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar  {
-	NSString *text=self.searchBar.text;
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     
-    //prepare string for searching
-	text = [text lowercaseString];
-	text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    [self fetchData:[NSString stringWithFormat:@"s=%@",text]];
-    
-    [self.searchBar resignFirstResponder];
+    [self.masterFilmList addObjectsFromArray:[PreviewFilm getAllBookmarkedFilms]];
 }
 
 
@@ -94,7 +71,7 @@
     cell.backgroundColor = [UIColor clearColor];
     // set default user image while image is being downloaded
     [cell imgTopStory].image = [UIImage imageNamed:@"noImageAvailable.png"];
-        
+    
     
     // download the image asynchronously
     if (![movie.poster  isEqual: @"N/A"]) {
@@ -102,7 +79,7 @@
             if (succeeded) {
                 // change the image in the cell
                 [cell imgTopStory].image = image;
-
+                
             }
         }];
     }
@@ -114,9 +91,9 @@
     [[cell starView] setImagesDeselected:@"0.png" partlySelected:@"Red_star" fullSelected:@"Red_star" andDelegate:self];
 	[[cell starView] displayRating:([movie.starRating intValue]%5)];
     
-
+    
     [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-
+    
     self.myTableView.separatorColor = [UIColor whiteColor];
     
     return cell;
@@ -124,7 +101,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *CellIdentifier = @"cell";
+    //    static NSString *CellIdentifier = @"cell";
     
     
     return 110;
@@ -133,18 +110,28 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    [self performSegueWithIdentifier:@"showDetails" sender:self];
+    [self performSegueWithIdentifier:@"showBookmark" sender:self];
     
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.masterFilmList removeObjectAtIndex:indexPath.row];
+        
+        //delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    }
 }
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if ([segue.identifier isEqualToString:@"showDetails"]){
+    if ([segue.identifier isEqualToString:@"showBookmark"]){
         
         
         [(FilmDetailViewController *)segue.destinationViewController setFilm:[self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row]];
@@ -153,35 +140,7 @@
     }
 }
 
--(void)fetchData: (NSString *)parameters{
-    [self showActivityIndicator];
-    
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        FilmDataService  *service = [[FilmDataService alloc] init];
-        self.masterFilmList = [service selectFromJSon:parameters];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            
-            [self showProgressHUDCompleteMessage: (self.masterFilmList.count == 0) ? NSLocalizedString(@"No films found!", @"Informing the user a process has failed") : nil];
-            
-//            [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//            noResultText = NSLocalizedString(@"No results for:", "No results for:");
-//            noResultText = [noResultText stringByAppendingString:@" "];
-//            noResultText = [noResultText stringByAppendingString:searchBar.text];
-//            tryGoogle= NSLocalizedString(@"Try searching with Google (online).", "Try searching with Google (online).");
-//            imgGoogleName=@"iPhoneIconGoogleLogo.png";
-//            isSearching=true;
-//            [self.myTableView reloadData];
-//            rowHeight = NO;
-            
-            [self.myTableView reloadData];
-            
-        });
-        
-    });
-    
-}
+
 
 -(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex
 {
@@ -191,12 +150,10 @@
 
 
 
--(void)hideKeyboard{
-    [self.searchBar resignFirstResponder];
-}
 
 -(void)ratingChanged:(float)newRating {
-//	ratingLabel.text = [NSString stringWithFormat:@"Rating is: %1.1f", newRating];
+    //	ratingLabel.text = [NSString stringWithFormat:@"Rating is: %1.1f", newRating];
 }
+
 
 @end

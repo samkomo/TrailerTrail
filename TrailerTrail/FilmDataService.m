@@ -26,7 +26,11 @@
     NSString *s_json = [self getJsonDataString:title];
     NSError *error = nil;
     
+  
+    
     if ([self getSimpleJSON:s_json]) {
+        
+        
         NSDictionary *s_dict = [NSJSONSerialization JSONObjectWithData:[self getSimpleJSON:s_json] options:kNilOptions error:&error];
         
         NSArray *searchResult = [s_dict objectForKeyedSubscript:@"Search"];
@@ -69,9 +73,12 @@
     
     NSString *url = [FilmDataService baseAPIUrl];
     
+    
+    
     url = [url stringByAppendingString:urlParam];
     
-    NSURL *jsonUrl = [NSURL URLWithString:url];
+    NSURL *jsonUrl = [NSURL URLWithString:[FilmDataService encodeURIComponent:url]];
+    
     
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
@@ -99,4 +106,15 @@
     return  [jsonString dataUsingEncoding:NSUTF8StringEncoding];
 }
 
++ (NSString *)encodeURIComponent:(NSString *)string
+{
+    NSString *s = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return s;
+}
+
++ (NSString *)decodeURIComponent:(NSString *)string
+{
+    NSString *s = [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return s;
+}
 @end

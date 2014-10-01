@@ -118,9 +118,13 @@
 }
 
 - (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender {
-    PreviewFilm *movie = self.film;
-    [movie.bookmarkedFilms addObject:self.film];
-    [movie saveLocally];
+    PreviewFilm *film1 = [[PreviewFilm alloc] init];
+    [film1.bookmarkedFilms addObjectsFromArray:[PreviewFilm unarchive]];
+    
+    [film1.bookmarkedFilms addObject:self.film];
+    [film1 saveLocally];
+    
+    [self showProgressHUDCompleteMessage:@"Bookmark Successful!"];
     
 }
 
@@ -137,5 +141,7 @@
         [player.view removeFromSuperview];
     }
 }
+
+
 
 @end

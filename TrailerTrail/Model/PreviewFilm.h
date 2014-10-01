@@ -27,5 +27,7 @@
 
 +(NSMutableArray *) getAllBookmarkedFilms;
 -(void) archive;
++(id) unarchive;
 
++ (instancetype)sharedFilmData;
 @end

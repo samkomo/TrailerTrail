@@ -14,6 +14,6 @@
 @property (strong, nonatomic) UIImageView *imgTopStory;
 @property (strong, nonatomic) UILabel *titleLabel, *languageLabel, *typeLabel;
 @property (nonatomic, readwrite) CGFloat verticalPadding;
-@property (nonatomic, retain) RatingView *starView;
+@property (nonatomic, strong) RatingView *starView;
 
 @end

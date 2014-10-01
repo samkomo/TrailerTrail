@@ -176,6 +176,13 @@
     return self;
 }
 
+- (void)dealloc{
+
+    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [self.scrollView removeFromSuperview];
+    _scrollView = nil;
+}
+
 //- (void)dealloc
 //{
 //    [super dealloc];

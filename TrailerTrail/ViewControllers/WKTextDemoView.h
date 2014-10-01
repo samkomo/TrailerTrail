@@ -58,7 +58,7 @@
 
 
 @property (nonatomic, readonly) UILabel *textLabel;
-@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, readonly) WKVerticalScrollBar *verticalScrollBar;
 @property (nonatomic, readonly) WKAccessoryView *accessoryView;
 
