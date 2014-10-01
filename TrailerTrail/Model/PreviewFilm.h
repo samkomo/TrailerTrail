@@ -8,7 +8,7 @@
 
 #import "Film.h"
 
-@interface PreviewFilm : Film
+@interface PreviewFilm : Film <NSCoding>
 
 @property (strong, nonatomic) NSString *rated;
 @property (strong, nonatomic) NSString *released;
@@ -23,5 +23,9 @@
 @property (strong, nonatomic) NSString *starRating;
 
 @property (strong, nonatomic) NSMutableArray *previewFilms;
+@property (strong, nonatomic) NSMutableArray *bookmarkedFilms;
+
++(NSMutableArray *) getAllBookmarkedFilms;
+-(void) archive;
 
 @end

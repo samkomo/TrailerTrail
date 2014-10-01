@@ -17,5 +17,6 @@
 
 -(NSDictionary *)serialize;
 -(id)getValue:(id)value;
+-(void)saveLocally;
 
 @end

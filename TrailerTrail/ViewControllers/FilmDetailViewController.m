@@ -28,6 +28,7 @@
 #import "FilmDetailViewController.h"
 #import "WKVerticalScrollBar.h"
 #import "SWRevealViewController.h"
+#import "PreviewFilm.h"
 
 @implementation FilmDetailViewController
 
@@ -114,6 +115,13 @@
     _moviePlayer.shouldAutoplay = YES;
     [self.view addSubview:_moviePlayer.view];
     [_moviePlayer setFullscreen:YES animated:YES];
+}
+
+- (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender {
+    PreviewFilm *movie = self.film;
+    [movie.bookmarkedFilms addObject:self.film];
+    [movie saveLocally];
+    
 }
 
 - (void) moviePlayBackDidFinish:(NSNotification*)notification {

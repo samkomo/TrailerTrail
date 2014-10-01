@@ -39,4 +39,7 @@
 @property (nonatomic, strong) PreviewFilm *film;
 @property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 -(void)playMovie:(UITapGestureRecognizer *)gesture;
+
+- (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender;
+
 @end
