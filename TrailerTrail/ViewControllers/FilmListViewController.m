@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Latest Films";
+    self.title = @"Films";
     
     [self showActivityIndicator];
     
@@ -67,6 +67,8 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
+   
+    
     return 1;
 }
 
@@ -74,19 +76,68 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    NSString *text = @"";
+    text = self.searchBar.text;
+    
+    if ([self.masterFilmList count] == 0 && ![self.searchBar.text  isEqual: @""]) {
+        return 1; // a single cell to report no data
+    }
     return [self.masterFilmList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //text to show if no search result
+    NSString *text = @"";
+    text = self.searchBar.text;
     static NSString *CellIdentifier = @"cell";
     
     BodyViewCell *cell = nil;
+
     
     if (cell==nil) {
         cell = [[BodyViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                    reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    if ([self.masterFilmList count] == 0 && ![self.searchBar.text  isEqual: @""]) {
+        
+        // Configure the cell...
+        
+        UILabel *imageView1;
+        UILabel *lblTemp2;
+        UIButton *buttonView3;
+        
+        //if(cell == nil)
+        //{
+        cell = [self getCellResultLView:CellIdentifier: tryGoogle];
+        
+		imageView1 = (UILabel *)[cell viewWithTag:1];
+		lblTemp2 = (UILabel *)[cell viewWithTag:2];
+		buttonView3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		buttonView3 =  (UIButton *)[cell viewWithTag:3];
+        //}
+        
+        
+        imageView1.text=noResultText;
+        lblTemp2.text = tryGoogle;
+        
+        
+        
+        
+        [buttonView3 setImage:[UIImage imageNamed:imgGoogleName] forState:UIControlStateNormal];
+        [buttonView3 setTag:3];
+        [buttonView3 addTarget:self action:@selector(searchGoogle:) forControlEvents:UIControlEventTouchUpInside];
+        buttonView3.adjustsImageWhenHighlighted = YES;
+        
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        //whatever else to configure your one cell you're going to return
+        return cell;
+        
     }
     
     PreviewFilm *movie = ((PreviewFilm * )self.masterFilmList[indexPath.row]);
@@ -165,16 +216,13 @@
             
             [self showProgressHUDCompleteMessage: (self.masterFilmList.count == 0) ? NSLocalizedString(@"No films found!", @"Informing the user a process has failed") : nil];
             
-//            [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//            noResultText = NSLocalizedString(@"No results for:", "No results for:");
-//            noResultText = [noResultText stringByAppendingString:@" "];
-//            noResultText = [noResultText stringByAppendingString:searchBar.text];
-//            tryGoogle= NSLocalizedString(@"Try searching with Google (online).", "Try searching with Google (online).");
-//            imgGoogleName=@"iPhoneIconGoogleLogo.png";
-//            isSearching=true;
-//            [self.myTableView reloadData];
-//            rowHeight = NO;
-            
+            [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+            noResultText = NSLocalizedString(@"No results for:", "No results for:");
+            noResultText = [noResultText stringByAppendingString:@" "];
+            noResultText = [noResultText stringByAppendingString:self.searchBar.text];
+            tryGoogle= NSLocalizedString(@"Try searching (online) with ", "Try searching (online) with ");
+            imgGoogleName=@"iPhoneIconGoogleLogo.png";
+            isSearching=true;
             [self.myTableView reloadData];
             
         });
@@ -197,6 +245,53 @@
 
 -(void)ratingChanged:(float)newRating {
 //	ratingLabel.text = [NSString stringWithFormat:@"Rating is: %1.1f", newRating];
+}
+
+- (void) searchGoogle:(id)sender  {
+	NSString *url = @"http://www.google.com/m/search?hl=en&q=";
+	url = [url stringByAppendingString:self.searchBar.text];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+
+// creates a new table cell with image and label placeholders
+- (UITableViewCell *) getCellResultLView:(NSString *)cellIdentifier :(NSString *) wText {
+	
+	CGRect CellFrame = CGRectMake(0.0, 0.0, 320.0, 45.0);
+	
+	
+	CGSize constSize = {270 };
+	CGSize wTextSize = [wText sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    CGRect ImageFrame = CGRectMake(10.0, 30.0, wTextSize.width+5, 25.0);
+	CGRect LabelFrame = CGRectMake(10.0, 80,wTextSize.width+5, 25.0);
+	
+	UILabel *lblTemp;
+	UILabel *imgTemp;
+	UIButton *buttonTemp;
+	
+	UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CellFrame];
+	
+	//Initialize Image with tag 1.
+	imgTemp = [[UILabel alloc] initWithFrame:ImageFrame];
+    [imgTemp setBackgroundColor:[UIColor clearColor]];
+	imgTemp.tag = 1;
+	[cell.contentView addSubview:imgTemp];
+	
+	//Initialize Label with tag 2.
+	lblTemp = [[UILabel alloc] initWithFrame:LabelFrame];
+	lblTemp.tag = 2;
+	lblTemp.font = [UIFont systemFontOfSize:15];
+    [lblTemp setBackgroundColor:[UIColor clearColor]];
+	[cell.contentView addSubview:lblTemp];
+    
+	//Initialize Label with tag 3.
+	buttonTemp = [UIButton buttonWithType:UIButtonTypeCustom];
+	buttonTemp.frame = CGRectMake(200.0, 77.0, 60.0, 40.0);
+	buttonTemp.tag = 3;
+	[cell.contentView addSubview:buttonTemp];
+	[cell.contentView setBackgroundColor:[UIColor clearColor]];
+	return cell;
 }
 
 @end

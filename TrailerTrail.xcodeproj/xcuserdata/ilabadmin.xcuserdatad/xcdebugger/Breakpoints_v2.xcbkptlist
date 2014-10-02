@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrailerTrail/ViewControllers/FilmDetailViewController.m"
-            timestampString = "433859871.245364"
+            timestampString = "433949682.642524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-addBookMarkedFilms:"
             landmarkType = "5">
          </BreakpointContent>

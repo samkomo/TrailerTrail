@@ -1,9 +1,9 @@
 //
-//  BaseViewController.h
+//  FilmListViewController.h
 //  TrailerTrail
 //
-//  Created by Rami Arafat on 12/26/12.
-//  Copyright (c) 2012 Tanasuk - Rami Arafat. All rights reserved.
+//  Created by ilabadmin on 9/29/14.
+//  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -25,6 +25,8 @@
 -(void)hideProgressHUD:(BOOL)animated;
 -(void)showProgressHUDCompleteMessage:(NSString *)message;
 -(void)showProgressHUDWithMessage:(NSString *)message;
+- (void)showProgressHUDWithSuccess:(NSString *)message;
+
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock;
 
 

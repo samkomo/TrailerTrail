@@ -13,6 +13,10 @@
 @interface FilmListViewController : BaseViewController
 {
     RatingView *starView;
+    NSString *noResultText;
+    NSString *tryGoogle;
+    NSString *imgGoogleName;
+    BOOL isSearching;
 
 }
 @property(nonatomic,weak)IBOutlet UITableView *myTableView;

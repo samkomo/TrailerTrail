@@ -122,6 +122,15 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.masterFilmList removeObjectAtIndex:indexPath.row];
         
+        [self showActivityIndicator];
+        PreviewFilm *film1 = [[PreviewFilm alloc] init];
+        film1.bookmarkedFilms = [[NSMutableArray alloc] init];
+        
+        [film1.bookmarkedFilms addObject:self.masterFilmList];
+        [film1 saveLocally];
+        
+        [self showProgressHUDWithSuccess:@"Deleted Successfully!"];
+
         //delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         

@@ -43,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self showProgressHUDCompleteMessage:@"Bookmark Successful!"];
    
     NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"fillerati" ofType:@"txt"];
     NSString *text = @"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER."; //[NSString stringWithContentsOfFile:fullPath
@@ -118,13 +118,14 @@
 }
 
 - (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender {
+    [self showActivityIndicator];
     PreviewFilm *film1 = [[PreviewFilm alloc] init];
     [film1.bookmarkedFilms addObjectsFromArray:[PreviewFilm unarchive]];
     
     [film1.bookmarkedFilms addObject:self.film];
     [film1 saveLocally];
     
-    [self showProgressHUDCompleteMessage:@"Bookmark Successful!"];
+    [self showProgressHUDWithSuccess:@"Bookmark Successful!"];
     
 }
 

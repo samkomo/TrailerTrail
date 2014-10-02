@@ -1,9 +1,9 @@
 //
-//  BaseViewController.m
-//  Lango
+//  FilmListViewController.h
+//  TrailerTrail
 //
-//  Created by Rami Arafat on 12/26/12.
-//  Copyright (c) 2012 Tanasuk - Rami Arafat. All rights reserved.
+//  Created by ilabadmin on 9/29/14.
+//  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>
@@ -105,6 +105,15 @@
         [self.view addSubview:_progressHUD];
     }
     return _progressHUD;
+}
+
+- (void)showProgressHUDWithSuccess:(NSString *)message  {
+    self.progressHUD.labelText = message;
+    self.progressHUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    self.progressHUD.mode = MBProgressHUDModeCustomView;
+    [self.progressHUD show:YES];
+    [self.progressHUD hide:YES afterDelay:1.5];
+    self.navigationController.navigationBar.userInteractionEnabled = NO;
 }
 
 - (void)showProgressHUDWithMessage:(NSString *)message {
