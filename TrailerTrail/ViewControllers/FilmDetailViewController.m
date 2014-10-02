@@ -76,7 +76,7 @@
     [[demoView emailImageView] setImage:[UIImage imageNamed:@"1399641171_open-email.png"]];
     [[demoView shareImageView] setImage:[UIImage imageNamed:@"1399641044_647404-share.png"]];
     
-    [[demoView releasedLabel] setText:@"22 Dec 2010"];
+    [[demoView releasedLabel] setText:self.film.released];
     [[demoView imgPlayTailer] setImage:[UIImage imageNamed:@"btnPlay_Small"]];
     
 //    [[demoView imgPlayTailer] addTarget:self action:@selector(searchGoogle:) forControlEvents:UIControlEventTouchUpInside];
@@ -125,7 +125,11 @@
     [film1.bookmarkedFilms addObject:self.film];
     [film1 saveLocally];
     
+<<<<<<< HEAD
     [self showProgressHUDWithSuccess:@"Bookmark Successful!"];
+=======
+    [self showProgressHUDCompleteMessage:NSLocalizedString(@"No films found!", @"Informing the user a process has failed")];
+>>>>>>> FETCH_HEAD
     
 }
 
