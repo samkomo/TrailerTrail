@@ -9,23 +9,7 @@
 #import "PreviewFilm.h"
 #import "utilities.h"
 
-//tags to retrieve contents from the api items
-#define kRated @"Rated"
-#define kReleased @"Released"
-#define kRuntime @"Runtime"
-#define kDirector @"Director"
-#define kWriter @"Writer"
-#define kActors @"Actors"
-#define kPlot @"Plot"
-#define kPoster @"Poster"
-#define kLanguage @"Language"
-#define kimdbVotes @"imdbVotes"
-#define kGenre @"Genre"
-#define kImdbRating @"imdbRating"
 
-
-//bookmark key
-#define kBookMark @"bookmark"
 
 
 static NSMutableArray *_bookmark;

@@ -30,7 +30,8 @@
 #import "BaseViewController.h"
 #import "PreviewFilm.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "Movie.h"
+#import "AppDelegate.h"
 
 @interface FilmDetailViewController : BaseViewController {
     WKTextDemoView *demoView;
@@ -41,5 +42,8 @@
 -(void)playMovie:(UITapGestureRecognizer *)gesture;
 
 - (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender;
+
+//data persistent with core data
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end

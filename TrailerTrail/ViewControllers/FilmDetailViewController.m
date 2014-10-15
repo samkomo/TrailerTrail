@@ -45,10 +45,7 @@
     [super viewDidLoad];
     [self showProgressHUDCompleteMessage:@"Bookmark Successful!"];
    
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"fillerati" ofType:@"txt"];
-    NSString *text = @"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER."; //[NSString stringWithContentsOfFile:fullPath
-//                                               encoding:NSUTF8StringEncoding
-//                                                  error:nil];
+ 
     
     [[demoView titleLabel] setText:self.film.title];
     
@@ -89,6 +86,13 @@
     [[demoView plotTrailerImage] addGestureRecognizer:tap];
     [tap setCancelsTouchesInView:NO];
     [tap setDelaysTouchesEnded:NO];
+    
+    
+    //core data
+    //1
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    //2
+    self.managedObjectContext = appDelegate.managedObjectContext;
 
 }
 
@@ -115,21 +119,44 @@
     _moviePlayer.shouldAutoplay = YES;
     [self.view addSubview:_moviePlayer.view];
     [_moviePlayer setFullscreen:YES animated:YES];
+    
+  
 }
 
 - (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender {
     [self showActivityIndicator];
-    PreviewFilm *film1 = [[PreviewFilm alloc] init];
-    [film1.bookmarkedFilms addObjectsFromArray:[PreviewFilm unarchive]];
+//    PreviewFilm *film1 = [[PreviewFilm alloc] init];
+//    [film1.bookmarkedFilms addObjectsFromArray:[PreviewFilm unarchive]];
+//    
+//    [film1.bookmarkedFilms addObject:self.film];
+//    [film1 saveLocally];
     
-    [film1.bookmarkedFilms addObject:self.film];
-    [film1 saveLocally];
-    
-<<<<<<< HEAD
     [self showProgressHUDWithSuccess:@"Bookmark Successful!"];
-=======
-    [self showProgressHUDCompleteMessage:NSLocalizedString(@"No films found!", @"Informing the user a process has failed")];
->>>>>>> FETCH_HEAD
+    
+    
+    
+
+    // Add Entry to PhoneBook Data base and reset all fields
+    
+    //  1
+    Movie * newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Movie"
+                                                      inManagedObjectContext:self.managedObjectContext];
+    //  2
+    newEntry.title = self.film.title;
+    newEntry.imdbID = self.film.imdbID;
+    newEntry.type = self.film.type;
+    newEntry.language = self.film.language;
+    newEntry.poster = self.film.poster;
+    newEntry.starRating = self.film.starRating;
+    
+    
+    
+    
+    //  3
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
     
 }
 

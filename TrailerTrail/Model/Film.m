@@ -9,11 +9,7 @@
 #import "Film.h"
 
 
-//tags to retrieve contents from the api items
-#define kTitle @"Title"
-#define kImdbID @"imdbID"
-#define kType @"Type"
-#define kYear @"Year"
+
 
 
 @implementation Film

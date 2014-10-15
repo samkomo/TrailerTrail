@@ -18,6 +18,9 @@
 		A13970AE19DAE67500C20C35 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13970AD19DAE67500C20C35 /* RatingView.m */; };
 		A13970B319DC354300C20C35 /* BookMarkedFilms.m in Sources */ = {isa = PBXBuildFile; fileRef = A13970B219DC354300C20C35 /* BookMarkedFilms.m */; };
 		A13BAD3C19D6CB6C00FB4C7F /* FilmDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD3B19D6CB6C00FB4C7F /* FilmDataService.m */; };
+		A1628F1919E5258100FEBC0F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628F1719E5252700FEBC0F /* CoreData.framework */; };
+		A1628F1A19E5258B00FEBC0F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */; };
+		A1628F1D19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1628F1B19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld */; };
 		A18C32DF19D5B68100E452BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C32DE19D5B68100E452BB /* main.m */; };
 		A18C32E219D5B68100E452BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C32E119D5B68100E452BB /* AppDelegate.m */; };
 		A18C32E519D5B68100E452BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C32E419D5B68100E452BB /* ViewController.m */; };
@@ -31,10 +34,11 @@
 		A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C331019D5CCF200E452BB /* PreviewFilm.m */; };
 		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
 		A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */; };
-		A18FBC3E19DACD9200F57B51 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */; };
+		A1B5E25C19EE98FD00E1027E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E25B19EE98FD00E1027E /* opencv2.framework */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
+		A1F5792619E66A5F0065418B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F5792519E66A5F0065418B /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,8 @@
 		A13970B219DC354300C20C35 /* BookMarkedFilms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMarkedFilms.m; sourceTree = "<group>"; };
 		A13BAD3A19D6CB6C00FB4C7F /* FilmDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDataService.h; sourceTree = "<group>"; };
 		A13BAD3B19D6CB6C00FB4C7F /* FilmDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmDataService.m; sourceTree = "<group>"; };
+		A1628F1719E5252700FEBC0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A1628F1C19E526CC00FEBC0F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A18C32D919D5B68100E452BB /* TrailerTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailerTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18C32DD19D5B68100E452BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A18C32DE19D5B68100E452BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,10 +102,14 @@
 		A18FBC3A19D99F8700F57B51 /* BodyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyViewCell.h; sourceTree = "<group>"; };
 		A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyViewCell.m; sourceTree = "<group>"; };
 		A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A1B5E25B19EE98FD00E1027E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Downloads/opencv2.framework; sourceTree = "<group>"; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		A1D3D24B19D6D91800037215 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A1F5791D19E65E860065418B /* TrailerTrail-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrailerTrail-Prefix.pch"; sourceTree = "<group>"; };
+		A1F5792419E66A5F0065418B /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		A1F5792519E66A5F0065418B /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18FBC3E19DACD9200F57B51 /* MediaPlayer.framework in Frameworks */,
+				A1B5E25C19EE98FD00E1027E /* opencv2.framework in Frameworks */,
+				A1628F1A19E5258B00FEBC0F /* MediaPlayer.framework in Frameworks */,
+				A1628F1919E5258100FEBC0F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,10 +194,20 @@
 			name = DataService;
 			sourceTree = "<group>";
 		};
+		A1628F1619E5246000FEBC0F /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				A1628F1B19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld */,
+				A1F5792419E66A5F0065418B /* Movie.h */,
+				A1F5792519E66A5F0065418B /* Movie.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		A18C32D019D5B68100E452BB = {
 			isa = PBXGroup;
 			children = (
-				A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */,
+				A1B5E25B19EE98FD00E1027E /* opencv2.framework */,
 				A18C32DB19D5B68100E452BB /* TrailerTrail */,
 				A18C32F519D5B68100E452BB /* TrailerTrailTests */,
 				A18C32DA19D5B68100E452BB /* Products */,
@@ -209,6 +231,7 @@
 				A18C32E319D5B68100E452BB /* ViewController.h */,
 				A18C32E419D5B68100E452BB /* ViewController.m */,
 				A18C32E619D5B68100E452BB /* Main.storyboard */,
+				A1628F1619E5246000FEBC0F /* Core Data */,
 				180FE98D19D74BC9003638E9 /* ViewControllers */,
 				A18C32E919D5B68100E452BB /* Images.xcassets */,
 				A18C32EB19D5B68100E452BB /* LaunchScreen.xib */,
@@ -225,8 +248,11 @@
 		A18C32DC19D5B68100E452BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1628F1719E5252700FEBC0F /* CoreData.framework */,
+				A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */,
 				A18C32DD19D5B68100E452BB /* Info.plist */,
 				A18C32DE19D5B68100E452BB /* main.m */,
+				A1F5791D19E65E860065418B /* TrailerTrail-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -403,6 +429,8 @@
 				A13970B319DC354300C20C35 /* BookMarkedFilms.m in Sources */,
 				18FA13CE19D9EB5700BB9F95 /* SWRevealViewController.m in Sources */,
 				A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */,
+				A1628F1D19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld in Sources */,
+				A1F5792619E66A5F0065418B /* Movie.m in Sources */,
 				18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */,
 				180FE99419D75000003638E9 /* MBProgressHUD.m in Sources */,
 				A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */,
@@ -531,6 +559,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ilabadmin/Downloads,
+				);
+				GCC_PREFIX_HEADER = "TrailerTrail/TrailerTrail-Prefix.pch";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -546,6 +579,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ilabadmin/Downloads,
+				);
+				GCC_PREFIX_HEADER = "TrailerTrail/TrailerTrail-Prefix.pch";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -620,6 +658,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1628F1B19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1628F1C19E526CC00FEBC0F /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = A1628F1C19E526CC00FEBC0F /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = "Core Data/CoreDataModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A18C32D119D5B68100E452BB /* Project object */;
 }

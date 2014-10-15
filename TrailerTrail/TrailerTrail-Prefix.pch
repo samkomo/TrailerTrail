@@ -1,0 +1,42 @@
+//
+//  TrailerTrail-Prefix.pch
+//  TrailerTrail
+//
+//  Created by ilabadmin on 10/9/14.
+//  Copyright (c) 2014 Maginnovate. All rights reserved.
+//
+
+#import <CoreData/CoreData.h>
+
+#ifndef TrailerTrail_TrailerTrail_Prefix_pch
+#define TrailerTrail_TrailerTrail_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+
+//tags to retrieve contents from the api items
+#define kTitle @"Title"
+#define kImdbID @"imdbID"
+#define kType @"Type"
+#define kYear @"Year"
+
+//tags to retrieve contents from the api items
+#define kRated @"Rated"
+#define kReleased @"Released"
+#define kRuntime @"Runtime"
+#define kDirector @"Director"
+#define kWriter @"Writer"
+#define kActors @"Actors"
+#define kPlot @"Plot"
+#define kPoster @"Poster"
+#define kLanguage @"Language"
+#define kimdbVotes @"imdbVotes"
+#define kGenre @"Genre"
+#define kImdbRating @"imdbRating"
+
+
+//bookmark key
+#define kBookMark @"bookmark"

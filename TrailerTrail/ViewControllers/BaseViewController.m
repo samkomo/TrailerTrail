@@ -113,7 +113,7 @@
     self.progressHUD.mode = MBProgressHUDModeCustomView;
     [self.progressHUD show:YES];
     [self.progressHUD hide:YES afterDelay:1.5];
-    self.navigationController.navigationBar.userInteractionEnabled = NO;
+    self.navigationController.navigationBar.userInteractionEnabled = YES;
 }
 
 - (void)showProgressHUDWithMessage:(NSString *)message {

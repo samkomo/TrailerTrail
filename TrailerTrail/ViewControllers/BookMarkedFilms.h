@@ -19,6 +19,11 @@
 
 @property (strong, nonatomic) NSMutableArray *masterFilmList;
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+//core data
+@property (nonatomic,strong)NSArray* fetchedRecordsArray;
+
+
 -(void)ratingChanged:(float)newRating;
 
 -(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex;

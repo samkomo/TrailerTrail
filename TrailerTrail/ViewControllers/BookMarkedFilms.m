@@ -11,7 +11,11 @@
 #import "PreviewFilm.h"
 #import "FilmDetailViewController.h"
 
+#import "AppDelegate.h"
+#import "Movie.h"
+
 @implementation BookMarkedFilms
+@synthesize managedObjectContext = _managedObjectContext;
 
 -(NSMutableArray *)masterFilmList{
     if (!_masterFilmList) {
@@ -25,7 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"BookMarked Films";
-        
+    
+    
     
     
     
@@ -36,7 +41,15 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
-    [self.masterFilmList addObjectsFromArray:[PreviewFilm getAllBookmarkedFilms]];
+    //  1
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    
+    //fetch data
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    // Fetching Records and saving it in "fetchedRecordsArray" object
+    self.masterFilmList = [[appDelegate getAllPhoneBookRecords] mutableCopy];
+    [self.myTableView reloadData];
 }
 
 
@@ -66,7 +79,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    PreviewFilm *movie = ((PreviewFilm * )self.masterFilmList[indexPath.row]);
+    Movie *movie = self.masterFilmList[indexPath.row];
+    
     
     cell.backgroundColor = [UIColor clearColor];
     // set default user image while image is being downloaded
@@ -119,21 +133,51 @@
 }
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        
+//        [self showActivityIndicator];
+//        
+//        //delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        
+//        [self.managedObjectContext deleteObject:[self.masterFilmList objectAtIndex:indexPath.row]];
+//        NSError *error;
+//        if (![self.managedObjectContext save:&error]) {
+//            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//        }
+//        
+//        
+//        PreviewFilm *film1 = [[PreviewFilm alloc] init];
+//        film1.bookmarkedFilms = [[NSMutableArray alloc] init];
+//        
+//        [film1.bookmarkedFilms addObject:self.masterFilmList];
+//        [film1 saveLocally];
+//        
+//        [self showProgressHUDWithSuccess:@"Deleted Successfully!"];
+//
+//        
+//        
+//    }
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.masterFilmList removeObjectAtIndex:indexPath.row];
+        //    1
+        [tableView beginUpdates];
+        // Delete the row from the data source
         
-        [self showActivityIndicator];
-        PreviewFilm *film1 = [[PreviewFilm alloc] init];
-        film1.bookmarkedFilms = [[NSMutableArray alloc] init];
+        //    2
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        [film1.bookmarkedFilms addObject:self.masterFilmList];
-        [film1 saveLocally];
-        
-        [self showProgressHUDWithSuccess:@"Deleted Successfully!"];
-
-        //delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
+        //    3
+        [self.managedObjectContext deleteObject:[self.masterFilmList objectAtIndex:indexPath.row]];
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        //    4
+        AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        self.masterFilmList = [[appDelegate getAllPhoneBookRecords]mutableCopy];
+        //    5
+        [tableView endUpdates];
     }
 }
 
