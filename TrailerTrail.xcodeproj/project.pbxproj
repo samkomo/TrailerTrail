@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		180FE99019D74BC9003638E9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180FE98F19D74BC9003638E9 /* BaseViewController.m */; };
 		180FE99419D75000003638E9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 180FE99319D75000003638E9 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1860562F19EEE45D0019E689 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1860562E19EEE45D0019E689 /* FacebookSDK.framework */; };
 		1860563219EF0FAB0019E689 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860563119EF0FAB0019E689 /* FBLoginViewController.m */; };
 		18FA13BF19D9E96100BB9F95 /* FilmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13BE19D9E96100BB9F95 /* FilmDetailViewController.m */; };
 		18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA13C419D9E9D500BB9F95 /* WKTextDemoView.m */; };
@@ -36,6 +35,7 @@
 		A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C331019D5CCF200E452BB /* PreviewFilm.m */; };
 		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
 		A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */; };
+		A1B5E26019F017B000E1027E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E25F19F017B000E1027E /* FacebookSDK.framework */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -57,7 +57,6 @@
 		180FE98F19D74BC9003638E9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		180FE99219D75000003638E9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		180FE99319D75000003638E9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		1860562E19EEE45D0019E689 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1860563019EF0FAB0019E689 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		1860563119EF0FAB0019E689 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
 		18FA13BD19D9E96100BB9F95 /* FilmDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDetailViewController.h; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		A18FBC3A19D99F8700F57B51 /* BodyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyViewCell.h; sourceTree = "<group>"; };
 		A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyViewCell.m; sourceTree = "<group>"; };
 		A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A1B5E25F19F017B000E1027E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = SOURCE_ROOT; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			files = (
 				A1628F1A19E5258B00FEBC0F /* MediaPlayer.framework in Frameworks */,
 				A1628F1919E5258100FEBC0F /* CoreData.framework in Frameworks */,
-				1860562F19EEE45D0019E689 /* FacebookSDK.framework in Frameworks */,
+				A1B5E26019F017B000E1027E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +260,7 @@
 		A18C32DC19D5B68100E452BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1860562E19EEE45D0019E689 /* FacebookSDK.framework */,
+				A1B5E25F19F017B000E1027E /* FacebookSDK.framework */,
 				A1628F1719E5252700FEBC0F /* CoreData.framework */,
 				A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */,
 				A18C32DD19D5B68100E452BB /* Info.plist */,
@@ -577,6 +577,8 @@
 					"$(inherited)",
 					/Users/ilabadmin/Downloads,
 					/Users/fahari/Documents/FacebookSDK,
+					/Volumes/ANOKIANI/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "TrailerTrail/TrailerTrail-Prefix.pch";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;
@@ -598,6 +600,8 @@
 					"$(inherited)",
 					/Users/ilabadmin/Downloads,
 					/Users/fahari/Documents/FacebookSDK,
+					/Volumes/ANOKIANI/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "TrailerTrail/TrailerTrail-Prefix.pch";
 				INFOPLIST_FILE = TrailerTrail/Info.plist;

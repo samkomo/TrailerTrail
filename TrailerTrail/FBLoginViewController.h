@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
 
-@interface FBLoginViewController : UIViewController<FBLoginViewDelegate>
+@interface FBLoginViewController : UIViewController <FBLoginViewDelegate>
 
 @property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
 
@@ -21,5 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
 
+- (IBAction)launchApplication:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnProceed;
 @end
