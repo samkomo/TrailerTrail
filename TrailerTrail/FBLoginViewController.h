@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface FBLoginViewController : UIViewController <FBLoginViewDelegate>
+@interface FBLoginViewController : BaseViewController <FBLoginViewDelegate>
 
 @property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
 

@@ -186,9 +186,7 @@
     
     if ([segue.identifier isEqualToString:@"showBookmark"]){
         
-        
         [(FilmDetailViewController *)segue.destinationViewController setFilm:[self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row]];
-        
         
     }
 }

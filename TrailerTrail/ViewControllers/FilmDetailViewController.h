@@ -43,10 +43,18 @@
 
 - (IBAction)addBookMarkedFilms:(UIBarButtonItem *)sender;
 
+
+
 //data persistent with core data
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
+
 //sharing via facebook
 -(void)favcebookSharing;
+//staging image
+-(void)stageImage;
+//set publish permission
+-(void) publishingPermission;
+
 
 @end

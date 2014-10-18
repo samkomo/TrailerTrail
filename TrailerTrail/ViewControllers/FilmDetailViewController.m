@@ -131,7 +131,7 @@
     
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     
-    [actionSheet showInView:self.view];
+    [actionSheet showFromBarButtonItem:sender animated:YES];
     
     
 //    PreviewFilm *film1 = [[PreviewFilm alloc] init];
@@ -178,6 +178,14 @@
 }
 
 -(void) facebookSharing{
+    
+//    [self publishingPermission];
+    
+    
+    
+    
+    
+    
     // Check if the Facebook app is installed and we can present the share dialog
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
     params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
@@ -241,6 +249,73 @@
                                                   }];
     }
 
+}
+
+-(void)publishingPermission{
+    
+    // Check for publish permissions
+    [FBRequestConnection startWithGraphPath:@"/me/permissions"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error){
+                                  NSDictionary *permissions= [(NSArray *)[result data] objectAtIndex:0];
+                                  if (![permissions objectForKey:@"publish_actions"]){
+                                      // Permission hasn't been granted, so ask for publish_actions
+                                      [FBSession.activeSession requestNewPublishPermissions:[NSArray arrayWithObject:@"publish_actions"]
+                                                                            defaultAudience:FBSessionDefaultAudienceFriends
+                                                                          completionHandler:^(FBSession *session, NSError *error) {
+                                                                              if (!error) {
+                                                                                  if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound){
+                                                                                      // Permission not granted, tell the user we will not share to Facebook
+                                                                                      NSLog(@"Permission not granted, we will not share to Facebook.");
+                                                                                      
+                                                                                  } else {
+                                                                                      // Permission granted, publish the OG story
+                                                                                      [self stageImage];
+                                                                                  }
+                                                                                  
+                                                                              } else {
+                                                                                  // An error occurred, we need to handle the error
+                                                                                  // See: https://developers.facebook.com/docs/ios/errors
+                                                                                  NSLog(@"Encountered an error requesting permissions: %@", error.description);
+                                                                              }
+                                                                          }];
+                                      
+                                  } else {
+                                      // Permissions present, publish the OG story
+                                      [self stageImage];
+                                  }
+                                  
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  // See: https://developers.facebook.com/docs/ios/errors
+                                  NSLog(@"Encountered an error checking permissions: %@", error.description);
+                              }
+                          }];
+}
+
+-(void)stageImage{
+    // download the image asynchronously
+    if (![self.film.poster  isEqual: @"N/A"]) {
+        [self downloadImageWithURL:[NSURL URLWithString:self.film.poster] completionBlock:^(BOOL succeeded, UIImage *image) {
+            if (succeeded) {
+                
+                // stage an image
+                [FBRequestConnection startForUploadStagingResourceWithImage:image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    if(!error) {
+                        // Log the uri of the staged image
+                        NSLog(@"Successfuly staged image with staged URI: %@", [result objectForKey:@"uri"]);
+                        
+                        // Further code to post the OG story goes here
+                        
+                    } else {
+                        // An error occurred
+                        NSLog(@"Error staging an image: %@", error);
+                    }
+                }];
+                
+            }
+        }];
+    }
 }
 
 

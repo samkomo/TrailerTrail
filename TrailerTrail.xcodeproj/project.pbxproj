@@ -139,6 +139,7 @@
 		180FE98D19D74BC9003638E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1860563319EF0FB90019E689 /* FBLogin */,
 				180FE98E19D74BC9003638E9 /* BaseViewController.h */,
 				180FE98F19D74BC9003638E9 /* BaseViewController.m */,
 				A18FBC3119D983D900F57B51 /* FilmListViewController.h */,
@@ -169,6 +170,7 @@
 				1860563119EF0FAB0019E689 /* FBLoginViewController.m */,
 			);
 			name = FBLogin;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		18FA13CF19D9EBF000BB9F95 /* WK */ = {
@@ -252,7 +254,6 @@
 				A18C330519D5B9AB00E452BB /* Models */,
 				A18C336219D6BF0600E452BB /* Libraries */,
 				A18C32DC19D5B68100E452BB /* Supporting Files */,
-				1860563319EF0FB90019E689 /* FBLogin */,
 			);
 			path = TrailerTrail;
 			sourceTree = "<group>";
