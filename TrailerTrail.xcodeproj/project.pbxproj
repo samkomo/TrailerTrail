@@ -37,6 +37,10 @@
 		A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3219D983D900F57B51 /* FilmListViewController.m */; };
 		A18FBC3C19D99F8700F57B51 /* BodyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */; };
 		A1B5E26019F017B000E1027E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E25F19F017B000E1027E /* FacebookSDK.framework */; };
+		A1B5E2BE19F6A92700E1027E /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2BD19F6A92700E1027E /* XCDFormInputAccessoryView.m */; };
+		A1B5E2C119F6A94800E1027E /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2C019F6A94800E1027E /* DemoViewController.m */; };
+		A1B5E2C319F6B83900E1027E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */; };
+		A1B5E2C619F6B8AC00E1027E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -108,6 +112,13 @@
 		A18FBC3B19D99F8700F57B51 /* BodyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyViewCell.m; sourceTree = "<group>"; };
 		A18FBC3D19DACD9200F57B51 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A1B5E25F19F017B000E1027E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = SOURCE_ROOT; };
+		A1B5E2BC19F6A92700E1027E /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
+		A1B5E2BD19F6A92700E1027E /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
+		A1B5E2BF19F6A94800E1027E /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		A1B5E2C019F6A94800E1027E /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1B5E2C419F6B8AC00E1027E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -120,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B5E2C319F6B83900E1027E /* CoreGraphics.framework in Frameworks */,
 				A1628F1A19E5258B00FEBC0F /* MediaPlayer.framework in Frameworks */,
 				A1628F1919E5258100FEBC0F /* CoreData.framework in Frameworks */,
 				A1B5E26019F017B000E1027E /* FacebookSDK.framework in Frameworks */,
@@ -139,6 +151,8 @@
 		180FE98D19D74BC9003638E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1B5E2BF19F6A94800E1027E /* DemoViewController.h */,
+				A1B5E2C019F6A94800E1027E /* DemoViewController.m */,
 				1860563319EF0FB90019E689 /* FBLogin */,
 				180FE98E19D74BC9003638E9 /* BaseViewController.h */,
 				180FE98F19D74BC9003638E9 /* BaseViewController.m */,
@@ -150,6 +164,8 @@
 				18FA13BE19D9E96100BB9F95 /* FilmDetailViewController.m */,
 				A13970B119DC354300C20C35 /* BookMarkedFilms.h */,
 				A13970B219DC354300C20C35 /* BookMarkedFilms.m */,
+				A1B5E2C419F6B8AC00E1027E /* SettingsViewController.h */,
+				A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +237,7 @@
 		A18C32D019D5B68100E452BB = {
 			isa = PBXGroup;
 			children = (
+				A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */,
 				A18C32DB19D5B68100E452BB /* TrailerTrail */,
 				A18C32F519D5B68100E452BB /* TrailerTrailTests */,
 				A18C32DA19D5B68100E452BB /* Products */,
@@ -305,12 +322,22 @@
 		A18C336219D6BF0600E452BB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A1B5E2BB19F6A92700E1027E /* XCDFormInputAccessoryView */,
 				A13970AF19DAE68300C20C35 /* Ratings */,
 				18FA13CF19D9EBF000BB9F95 /* WK */,
 				180FE99119D75000003638E9 /* MBProgressHUD */,
 				A1D3D24719D6D91800037215 /* JSONKit */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		A1B5E2BB19F6A92700E1027E /* XCDFormInputAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E2BC19F6A92700E1027E /* XCDFormInputAccessoryView.h */,
+				A1B5E2BD19F6A92700E1027E /* XCDFormInputAccessoryView.m */,
+			);
+			path = XCDFormInputAccessoryView;
 			sourceTree = "<group>";
 		};
 		A1D3D24719D6D91800037215 /* JSONKit */ = {
@@ -432,6 +459,7 @@
 				A18C32E519D5B68100E452BB /* ViewController.m in Sources */,
 				A13970AE19DAE67500C20C35 /* RatingView.m in Sources */,
 				A18C330919D5C73100E452BB /* BaseEntity.m in Sources */,
+				A1B5E2C119F6A94800E1027E /* DemoViewController.m in Sources */,
 				A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */,
 				A18C330419D5B99C00E452BB /* Film.m in Sources */,
 				18FA13C819D9EA0200BB9F95 /* WKVerticalScrollBar.m in Sources */,
@@ -446,11 +474,13 @@
 				A1628F1D19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld in Sources */,
 				1860563219EF0FAB0019E689 /* FBLoginViewController.m in Sources */,
 				18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */,
+				A1B5E2BE19F6A92700E1027E /* XCDFormInputAccessoryView.m in Sources */,
 				180FE99419D75000003638E9 /* MBProgressHUD.m in Sources */,
 				A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */,
 				18EAA7EC19F3BABE0049844B /* Movie.m in Sources */,
 				A1D3D24E19D6D91800037215 /* README.md in Sources */,
 				A18C32DF19D5B68100E452BB /* main.m in Sources */,
+				A1B5E2C619F6B8AC00E1027E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
