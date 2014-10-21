@@ -2,7 +2,7 @@
 //  Movie.m
 //  TrailerTrail
 //
-//  Created by ilabadmin on 10/9/14.
+//  Created by Sammy on 10/19/14.
 //  Copyright (c) 2014 Maginnovate. All rights reserved.
 //
 
@@ -11,12 +11,17 @@
 
 @implementation Movie
 
-@dynamic title;
 @dynamic imdbID;
+@dynamic language;
+@dynamic poster;
+@dynamic starRating;
+@dynamic title;
 @dynamic type;
 @dynamic year;
-@dynamic poster;
-@dynamic language;
-@dynamic starRating;
+@dynamic runtime;
+@dynamic attribute;
+@dynamic genre;
+@dynamic plot;
+@dynamic released;
 
 @end

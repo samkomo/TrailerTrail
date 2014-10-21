@@ -38,6 +38,9 @@
 }
 
 @property (nonatomic, strong) PreviewFilm *film;
+@property (nonatomic, strong) Movie *filmSaved;
+@property (nonatomic) BOOL isSaved;
+
 @property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 -(void)playMovie:(UITapGestureRecognizer *)gesture;
 

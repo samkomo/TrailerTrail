@@ -186,14 +186,17 @@
     
     if ([segue.identifier isEqualToString:@"showBookmark"]){
         
-        [(FilmDetailViewController *)segue.destinationViewController setFilm:[self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row]];
+        Movie *movie = [self objectInListAtIndex:[self.myTableView indexPathForSelectedRow].row];
+        NSLog(@"%@",movie.title);
         
+        [(FilmDetailViewController *)segue.destinationViewController setFilmSaved:movie];
+        [(FilmDetailViewController *)segue.destinationViewController setIsSaved:YES];
     }
 }
 
 
 
--(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex
+-(Movie *)objectInListAtIndex:(NSUInteger)theIndex
 {
     return [self.masterFilmList objectAtIndex:theIndex];
 }

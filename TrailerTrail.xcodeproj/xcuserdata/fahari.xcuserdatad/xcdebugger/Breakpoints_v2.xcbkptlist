@@ -25,12 +25,12 @@
                   symbolName = "__28-[ViewController fetchData:]_block_invoke"
                   moduleName = "TrailerTrail"
                   urlString = "file:///Users/fahari/Development/IBM/TrailerTrail/TrailerTrail/ViewController.m"
-                  timestampString = "435100757.816148"
+                  timestampString = "435417756.499915"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "194">
+                  offsetFromSymbolStart = "170">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -39,12 +39,12 @@
                   symbolName = "__28-[ViewController fetchData:]_block_invoke_2"
                   moduleName = "TrailerTrail"
                   urlString = "file:///Users/fahari/Development/IBM/TrailerTrail/TrailerTrail/ViewController.m"
-                  timestampString = "435100758.277409"
+                  timestampString = "435417756.500238"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "21">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>

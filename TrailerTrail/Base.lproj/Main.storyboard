@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lo6-yr-esh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lo6-yr-esh">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -77,11 +77,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tDX-sN-uTV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0iS-ud-bXN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J8V-VD-7XZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -105,6 +105,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="6wb-jw-P2U"/>
                     <connections>
                         <outlet property="myTableView" destination="J8V-VD-7XZ" id="PVf-rQ-YrP"/>
@@ -117,6 +118,7 @@
         <!--Film Detail View Controller-->
         <scene sceneID="cLI-M3-gb9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XeT-FO-7TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Yzx-15-Zyd" customClass="FilmDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JN5-aN-ZtI"/>
@@ -129,9 +131,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="btk-3k-Q50"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XeT-FO-7TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="611"/>
+            <point key="canvasLocation" x="926" y="614"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vyp-wE-li6">
@@ -178,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1R-bD-uua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="201"/>
+            <point key="canvasLocation" x="926" y="-50"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9aA-9k-1FI">
@@ -253,7 +254,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8x-8K-GlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="1251"/>
+            <point key="canvasLocation" x="638" y="1919"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="use-vT-iCP">
@@ -271,7 +272,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yjz-Xi-9wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="1251"/>
+            <point key="canvasLocation" x="112" y="1919"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="AF5-XB-gYo">
@@ -363,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqE-H1-8Vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394" y="1715"/>
+            <point key="canvasLocation" x="-386" y="1919"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

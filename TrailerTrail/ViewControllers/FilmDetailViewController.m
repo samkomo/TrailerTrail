@@ -46,26 +46,53 @@
     [self showProgressHUDCompleteMessage:@"Bookmark Successful!"];
    
  
-    
-    [[demoView titleLabel] setText:self.film.title];
-    
-    // download the image asynchronously
-    if (![self.film.poster  isEqual: @"N/A"]) {
-        [self downloadImageWithURL:[NSURL URLWithString:self.film.poster] completionBlock:^(BOOL succeeded, UIImage *image) {
-            if (succeeded) {
-                // change the image in the cell
-                [demoView plotTrailerImage].image = image;
-                [demoView posterImage].image = image;
-            }
-        }];
+    if (self.isSaved) {
+        [[demoView titleLabel] setText:self.filmSaved.title];
+        
+        // download the image asynchronously
+        if (![self.filmSaved.poster  isEqual: @"N/A"]) {
+            [self downloadImageWithURL:[NSURL URLWithString:self.filmSaved.poster] completionBlock:^(BOOL succeeded, UIImage *image) {
+                if (succeeded) {
+                    // change the image in the cell
+                    [demoView plotTrailerImage].image = image;
+                    [demoView posterImage].image = image;
+                }
+            }];
+        }
+        
+        
+        
+        [[demoView runtimeLabel] setText:self.filmSaved.runtime];
+        [[demoView fbImageView] setImage:[UIImage imageNamed:@"1399655270_comments.png"]];
+        [[demoView genreLabel] setText:self.filmSaved.genre];
+        [[demoView textLabel] setText:self.filmSaved.plot];
+        [[demoView releasedLabel] setText:self.filmSaved.released];
+        
+    } else {
+        [[demoView titleLabel] setText:self.film.title];
+        
+        // download the image asynchronously
+        if (![self.film.poster  isEqual: @"N/A"]) {
+            [self downloadImageWithURL:[NSURL URLWithString:self.film.poster] completionBlock:^(BOOL succeeded, UIImage *image) {
+                if (succeeded) {
+                    // change the image in the cell
+                    [demoView plotTrailerImage].image = image;
+                    [demoView posterImage].image = image;
+                }
+            }];
+        }
+        
+        
+        
+        [[demoView runtimeLabel] setText:self.film.runtime];
+        [[demoView fbImageView] setImage:[UIImage imageNamed:@"1399655270_comments.png"]];
+        [[demoView genreLabel] setText:self.film.genre];
+        [[demoView textLabel] setText:self.film.plot];
+        [[demoView releasedLabel] setText:self.film.released];
+        
+        
+        
     }
-    
-
-    
-    [[demoView runtimeLabel] setText:self.film.runtime];
-    [[demoView fbImageView] setImage:[UIImage imageNamed:@"1399655270_comments.png"]];
-    [[demoView genreLabel] setText:self.film.genre];
-    [[demoView textLabel] setText:self.film.plot];
     
     [[demoView fbkImageView] setImage:[UIImage imageNamed:@"1399640891_facebook_circle_color.png"]];
     [[demoView tweeterImageView] setImage:[UIImage imageNamed:@"1399640970_twitter_circle_color.png"]];
@@ -73,8 +100,8 @@
     [[demoView emailImageView] setImage:[UIImage imageNamed:@"1399641171_open-email.png"]];
     [[demoView shareImageView] setImage:[UIImage imageNamed:@"1399641044_647404-share.png"]];
     
-    [[demoView releasedLabel] setText:self.film.released];
     [[demoView imgPlayTailer] setImage:[UIImage imageNamed:@"btnPlay_Small"]];
+
     
 //    [[demoView imgPlayTailer] addTarget:self action:@selector(searchGoogle:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -159,12 +186,18 @@
         Movie * newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:self.managedObjectContext];
         
         //  2
-        newEntry.title = self.film.title;
-        newEntry.imdbID = self.film.imdbID;
-        newEntry.type = self.film.type;
-        newEntry.language = self.film.language;
-        newEntry.poster = self.film.poster;
-        newEntry.starRating = self.film.starRating;
+        
+            newEntry.title = self.film.title;
+            newEntry.imdbID = self.film.imdbID;
+            newEntry.type = self.film.type;
+            newEntry.language = self.film.language;
+            newEntry.poster = self.film.poster;
+            newEntry.starRating = self.film.starRating;
+            newEntry.plot = self.film.plot;
+            newEntry.runtime = self.film.runtime;
+            newEntry.released = self.film.released;
+            newEntry.genre = self.film.genre;
+            
         
         //  3
         NSError *error;

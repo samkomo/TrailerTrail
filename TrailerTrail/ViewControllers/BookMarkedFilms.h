@@ -9,6 +9,8 @@
 #import "BaseViewController.h"
 #import "RatingView.h"
 #import "PreviewFilm.h"
+#import "Movie.h"
+
 @interface BookMarkedFilms : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 {
     RatingView *starView;
@@ -26,6 +28,6 @@
 
 -(void)ratingChanged:(float)newRating;
 
--(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex;
+-(Movie *)objectInListAtIndex:(NSUInteger)theIndex;
 
 @end
