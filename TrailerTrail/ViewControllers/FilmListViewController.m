@@ -13,7 +13,7 @@
 #import "FilmDetailViewController.h"
 
 @implementation FilmListViewController
-@synthesize searchBar = _searchBar;
+@synthesize searchBar = _searchBar, bannerView;
 
 -(NSMutableArray *)masterFilmList{
     if (!_masterFilmList) {
@@ -41,6 +41,9 @@
     
 
     self.searchBar.tintColor = [UIColor redColor];
+    
+    [self createBannerView];
+    [self.view bringSubviewToFront:bannerView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -292,6 +295,122 @@
 	[cell.contentView addSubview:buttonTemp];
 	[cell.contentView setBackgroundColor:[UIColor clearColor]];
 	return cell;
+}
+
+
+#pragma mark -
+#pragma mark === Banner View Methods ===
+#pragma mark -
+
+
+- (void)createBannerView {
+	
+	Class cls = NSClassFromString(@"ADBannerView");
+	if (cls) {
+        
+		ADBannerView *adView = [[cls alloc] initWithFrame:CGRectZero];
+		adView.delegate = self;
+		
+		adView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+		
+		// Set intital frame to be offscreen
+		CGRect bannerFrame =adView.frame;
+		bannerFrame.origin.y = - bannerFrame.size.height;
+		adView.frame = bannerFrame;
+		
+		self.bannerView = adView;
+		[self.view addSubview:adView];
+	}
+}
+
+
+
+- (void)showBanner {
+	
+	CGFloat fullViewHeight = self.view.frame.size.height;
+	CGRect tableFrame = self.myTableView.frame;
+	CGRect bannerFrame = self.bannerView.frame;
+    CGRect searchBarFrame = self.searchBar.frame;
+	
+	// Shrink the tableview to create space for banner
+    
+    tableFrame.size.height = fullViewHeight - (bannerFrame.size.height + searchBarFrame.size.height);
+    searchBarFrame.origin.y = bannerFrame.size.height;
+	tableFrame.origin.y = bannerFrame.size.height + searchBarFrame.size.height;
+	
+	// Move banner onscreen
+	bannerFrame.origin.y = 0;
+	
+	[UIView beginAnimations:@"showBanner" context:NULL];
+	self.bannerView.frame = bannerFrame;
+    self.searchBar.frame = searchBarFrame;
+    self.myTableView.frame = tableFrame;
+    
+	[UIView commitAnimations];
+}
+
+- (void)hideBanner {
+	
+	// Grow the tableview to occupy space left by banner
+	CGFloat fullViewHeight = self.view.frame.size.height;
+	CGRect tableFrame = self.myTableView.frame;
+    CGRect searchBarFrame = self.searchBar.frame;
+    
+    tableFrame.size.height = fullViewHeight - searchBarFrame.size.height;
+    searchBarFrame.origin.y = 0;
+	tableFrame.origin.y = searchBarFrame.size.height;
+	
+	// Move the banner view offscreen
+	CGRect bannerFrame = self.bannerView.frame;
+	bannerFrame.origin.y = - bannerFrame.size.height;
+	
+	self.myTableView.frame = tableFrame;
+	self.bannerView.frame = bannerFrame;
+    self.searchBar.frame = searchBarFrame;
+    
+}
+
+- (void)releaseBanner {
+    
+	if (self.bannerView) {
+		bannerView.delegate = nil;
+		self.bannerView = nil;
+	}
+}
+
+- (void)changeBannerOrientation:(UIInterfaceOrientation)toOrientation {
+	
+	if (UIInterfaceOrientationIsLandscape(toOrientation)) {
+		self.bannerView.currentContentSizeIdentifier =
+		ADBannerContentSizeIdentifierPortrait;
+	}
+	else {
+		self.bannerView.currentContentSizeIdentifier =
+		ADBannerContentSizeIdentifierPortrait;
+	}
+}
+
+#pragma mark -
+#pragma mark === ADBannerViewDelegate Methods ===
+#pragma mark -
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+	
+	[self showBanner];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+	
+	[self hideBanner];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    [self setSearchBar:nil];
+    self.myTableView = nil;
+    [self releaseBanner];
+    
 }
 
 @end

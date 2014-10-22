@@ -30,5 +30,9 @@
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock;
 
 
-
+//banner methods
+- (void)createBannerView;
+- (void)showBanner;
+- (void)hideBanner;
+- (void)releaseBanner;
 @end

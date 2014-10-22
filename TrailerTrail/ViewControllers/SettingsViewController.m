@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     CGRect bounds = [self.view bounds];
     self.view.frame = bounds;
-    self.myScrollView.contentSize = CGSizeMake(self.myScrollView.frame.size.width, 716);
+    self.myScrollView.contentSize = CGSizeMake(self.myScrollView.frame.size.width, 810);
 }
 
 - (void)didReceiveMemoryWarning

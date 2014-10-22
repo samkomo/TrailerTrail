@@ -29,6 +29,7 @@
 #import "WKVerticalScrollBar.h"
 #import "SWRevealViewController.h"
 #import "PreviewFilm.h"
+#import "REVMapViewController.h"
 
 @implementation FilmDetailViewController
 
@@ -154,7 +155,7 @@
     
     
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Rate this App" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share on Facebook", @"Bookmark", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Rate this App" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Movie Store", @"Bookmark",@"Share on Facebook", nil];
     
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     
@@ -175,6 +176,13 @@
     switch (buttonIndex)
     {
         case 0:
+        {
+            [self performSegueWithIdentifier:@"showStores" sender:self];
+            
+            break;
+
+        }
+        case 2:
         [self facebookSharing];
         break;
         case 1:

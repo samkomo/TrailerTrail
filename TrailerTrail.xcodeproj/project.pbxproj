@@ -41,6 +41,45 @@
 		A1B5E2C119F6A94800E1027E /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2C019F6A94800E1027E /* DemoViewController.m */; };
 		A1B5E2C319F6B83900E1027E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */; };
 		A1B5E2C619F6B8AC00E1027E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */; };
+		A1B5E2C819F7DE0200E1027E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B5E2C719F7DE0200E1027E /* iAd.framework */; };
+		A1B5E2F319F7F94D00E1027E /* MapDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2CD19F7F94D00E1027E /* MapDataModel.m */; };
+		A1B5E2F419F7F94D00E1027E /* cluster.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D019F7F94D00E1027E /* cluster.png */; };
+		A1B5E2F519F7F94D00E1027E /* cluster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D119F7F94D00E1027E /* cluster@2x.png */; };
+		A1B5E2F619F7F94D00E1027E /* pinpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D219F7F94D00E1027E /* pinpoint.png */; };
+		A1B5E2F719F7F94D00E1027E /* pinpoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D319F7F94D00E1027E /* pinpoint@2x.png */; };
+		A1B5E2F819F7F94D00E1027E /* Default-ipad-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D419F7F94D00E1027E /* Default-ipad-Landscape.png */; };
+		A1B5E2F919F7F94D00E1027E /* Default-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D519F7F94D00E1027E /* Default-iphone.png */; };
+		A1B5E2FA19F7F94D00E1027E /* Default@2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D619F7F94D00E1027E /* Default@2x-iphone.png */; };
+		A1B5E2FB19F7F94D00E1027E /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D719F7F94D00E1027E /* greyButton.png */; };
+		A1B5E2FC19F7F94D00E1027E /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D819F7F94D00E1027E /* greyButton@2x.png */; };
+		A1B5E2FD19F7F94D00E1027E /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2D919F7F94D00E1027E /* greyButtonHighlight.png */; };
+		A1B5E2FE19F7F94D00E1027E /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DA19F7F94D00E1027E /* greyButtonHighlight@2x.png */; };
+		A1B5E2FF19F7F94D00E1027E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DB19F7F94D00E1027E /* Icon-72.png */; };
+		A1B5E30019F7F94D00E1027E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DC19F7F94D00E1027E /* Icon.png */; };
+		A1B5E30119F7F94D00E1027E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DD19F7F94D00E1027E /* Icon@2x.png */; };
+		A1B5E30219F7F94D00E1027E /* LocationBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DE19F7F94D00E1027E /* LocationBlue.png */; };
+		A1B5E30319F7F94D00E1027E /* LocationBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2DF19F7F94D00E1027E /* LocationBlue@2x.png */; };
+		A1B5E30419F7F94D00E1027E /* LocationGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2E019F7F94D00E1027E /* LocationGrey.png */; };
+		A1B5E30519F7F94D00E1027E /* LocationGrey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2E119F7F94D00E1027E /* LocationGrey@2x.png */; };
+		A1B5E30619F7F94D00E1027E /* LocationHeadingBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2E219F7F94D00E1027E /* LocationHeadingBlue.png */; };
+		A1B5E30719F7F94D00E1027E /* LocationHeadingBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E2E319F7F94D00E1027E /* LocationHeadingBlue@2x.png */; };
+		A1B5E30819F7F94D00E1027E /* REVAnnotationsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2E519F7F94D00E1027E /* REVAnnotationsCollection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E30919F7F94D00E1027E /* REVClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2E719F7F94D00E1027E /* REVClusterAnnotationView.m */; };
+		A1B5E30A19F7F94D00E1027E /* REVClusterBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2E919F7F94D00E1027E /* REVClusterBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E30B19F7F94D00E1027E /* REVClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2EB19F7F94D00E1027E /* REVClusterManager.m */; };
+		A1B5E30C19F7F94D00E1027E /* REVClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2EE19F7F94D00E1027E /* REVClusterMapView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E30D19F7F94D00E1027E /* REVClusterPin.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2F019F7F94D00E1027E /* REVClusterPin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E30E19F7F94D00E1027E /* REVMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E2F219F7F94D00E1027E /* REVMapViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E31119F7F9CA00E1027E /* StoresMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E31019F7F9CA00E1027E /* StoresMapViewController.m */; };
+		A1B5E32219F7FA0F00E1027E /* BasicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E31419F7FA0F00E1027E /* BasicMapAnnotation.m */; };
+		A1B5E32319F7FA0F00E1027E /* CallOutAnnotationVifew.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E31619F7FA0F00E1027E /* CallOutAnnotationVifew.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1B5E32419F7FA0F00E1027E /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E31819F7FA0F00E1027E /* CalloutMapAnnotation.m */; };
+		A1B5E32519F7FA0F00E1027E /* MuddDetail.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E31A19F7FA0F00E1027E /* MuddDetail.jpeg */; };
+		A1B5E32619F7FA0F00E1027E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E31B19F7FA0F00E1027E /* pin.png */; };
+		A1B5E32719F7FA0F00E1027E /* JingDianMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E31D19F7FA0F00E1027E /* JingDianMapCell.m */; };
+		A1B5E32819F7FA0F00E1027E /* JingDianMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E31E19F7FA0F00E1027E /* JingDianMapCell.xib */; };
+		A1B5E32919F7FA0F00E1027E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B5E31F19F7FA0F00E1027E /* MapViewController.xib */; };
+		A1B5E32A19F7FA0F00E1027E /* TheMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B5E32119F7FA0F00E1027E /* TheMapViewController.m */; };
 		A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24819D6D91800037215 /* CHANGELOG.md */; };
 		A1D3D24D19D6D91800037215 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24A19D6D91800037215 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1D3D24E19D6D91800037215 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A1D3D24B19D6D91800037215 /* README.md */; };
@@ -119,6 +158,60 @@
 		A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A1B5E2C419F6B8AC00E1027E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A1B5E2C719F7DE0200E1027E /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		A1B5E2CC19F7F94D00E1027E /* MapDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDataModel.h; sourceTree = "<group>"; };
+		A1B5E2CD19F7F94D00E1027E /* MapDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDataModel.m; sourceTree = "<group>"; };
+		A1B5E2D019F7F94D00E1027E /* cluster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cluster.png; sourceTree = "<group>"; };
+		A1B5E2D119F7F94D00E1027E /* cluster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cluster@2x.png"; sourceTree = "<group>"; };
+		A1B5E2D219F7F94D00E1027E /* pinpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinpoint.png; sourceTree = "<group>"; };
+		A1B5E2D319F7F94D00E1027E /* pinpoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinpoint@2x.png"; sourceTree = "<group>"; };
+		A1B5E2D419F7F94D00E1027E /* Default-ipad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-ipad-Landscape.png"; sourceTree = "<group>"; };
+		A1B5E2D519F7F94D00E1027E /* Default-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iphone.png"; sourceTree = "<group>"; };
+		A1B5E2D619F7F94D00E1027E /* Default@2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-iphone.png"; sourceTree = "<group>"; };
+		A1B5E2D719F7F94D00E1027E /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = "<group>"; };
+		A1B5E2D819F7F94D00E1027E /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
+		A1B5E2D919F7F94D00E1027E /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
+		A1B5E2DA19F7F94D00E1027E /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		A1B5E2DB19F7F94D00E1027E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		A1B5E2DC19F7F94D00E1027E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A1B5E2DD19F7F94D00E1027E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		A1B5E2DE19F7F94D00E1027E /* LocationBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationBlue.png; sourceTree = "<group>"; };
+		A1B5E2DF19F7F94D00E1027E /* LocationBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LocationBlue@2x.png"; sourceTree = "<group>"; };
+		A1B5E2E019F7F94D00E1027E /* LocationGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationGrey.png; sourceTree = "<group>"; };
+		A1B5E2E119F7F94D00E1027E /* LocationGrey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LocationGrey@2x.png"; sourceTree = "<group>"; };
+		A1B5E2E219F7F94D00E1027E /* LocationHeadingBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationHeadingBlue.png; sourceTree = "<group>"; };
+		A1B5E2E319F7F94D00E1027E /* LocationHeadingBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LocationHeadingBlue@2x.png"; sourceTree = "<group>"; };
+		A1B5E2E419F7F94D00E1027E /* REVAnnotationsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVAnnotationsCollection.h; sourceTree = "<group>"; };
+		A1B5E2E519F7F94D00E1027E /* REVAnnotationsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVAnnotationsCollection.m; sourceTree = "<group>"; };
+		A1B5E2E619F7F94D00E1027E /* REVClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterAnnotationView.h; sourceTree = "<group>"; };
+		A1B5E2E719F7F94D00E1027E /* REVClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterAnnotationView.m; sourceTree = "<group>"; };
+		A1B5E2E819F7F94D00E1027E /* REVClusterBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterBlock.h; sourceTree = "<group>"; };
+		A1B5E2E919F7F94D00E1027E /* REVClusterBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterBlock.m; sourceTree = "<group>"; };
+		A1B5E2EA19F7F94D00E1027E /* REVClusterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterManager.h; sourceTree = "<group>"; };
+		A1B5E2EB19F7F94D00E1027E /* REVClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterManager.m; sourceTree = "<group>"; };
+		A1B5E2EC19F7F94D00E1027E /* REVClusterMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterMap.h; sourceTree = "<group>"; };
+		A1B5E2ED19F7F94D00E1027E /* REVClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterMapView.h; sourceTree = "<group>"; };
+		A1B5E2EE19F7F94D00E1027E /* REVClusterMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterMapView.m; sourceTree = "<group>"; };
+		A1B5E2EF19F7F94D00E1027E /* REVClusterPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterPin.h; sourceTree = "<group>"; };
+		A1B5E2F019F7F94D00E1027E /* REVClusterPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterPin.m; sourceTree = "<group>"; };
+		A1B5E2F119F7F94D00E1027E /* REVMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVMapViewController.h; sourceTree = "<group>"; };
+		A1B5E2F219F7F94D00E1027E /* REVMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVMapViewController.m; sourceTree = "<group>"; };
+		A1B5E30F19F7F9CA00E1027E /* StoresMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresMapViewController.h; sourceTree = "<group>"; };
+		A1B5E31019F7F9CA00E1027E /* StoresMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresMapViewController.m; sourceTree = "<group>"; };
+		A1B5E31319F7FA0F00E1027E /* BasicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotation.h; sourceTree = "<group>"; };
+		A1B5E31419F7FA0F00E1027E /* BasicMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicMapAnnotation.m; sourceTree = "<group>"; };
+		A1B5E31519F7FA0F00E1027E /* CallOutAnnotationVifew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutAnnotationVifew.h; sourceTree = "<group>"; };
+		A1B5E31619F7FA0F00E1027E /* CallOutAnnotationVifew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutAnnotationVifew.m; sourceTree = "<group>"; };
+		A1B5E31719F7FA0F00E1027E /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
+		A1B5E31819F7FA0F00E1027E /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
+		A1B5E31A19F7FA0F00E1027E /* MuddDetail.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MuddDetail.jpeg; sourceTree = "<group>"; };
+		A1B5E31B19F7FA0F00E1027E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		A1B5E31C19F7FA0F00E1027E /* JingDianMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JingDianMapCell.h; sourceTree = "<group>"; };
+		A1B5E31D19F7FA0F00E1027E /* JingDianMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JingDianMapCell.m; sourceTree = "<group>"; };
+		A1B5E31E19F7FA0F00E1027E /* JingDianMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingDianMapCell.xib; sourceTree = "<group>"; };
+		A1B5E31F19F7FA0F00E1027E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		A1B5E32019F7FA0F00E1027E /* TheMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMapViewController.h; sourceTree = "<group>"; };
+		A1B5E32119F7FA0F00E1027E /* TheMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMapViewController.m; sourceTree = "<group>"; };
 		A1D3D24819D6D91800037215 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A1D3D24919D6D91800037215 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A1D3D24A19D6D91800037215 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -131,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B5E2C819F7DE0200E1027E /* iAd.framework in Frameworks */,
 				A1B5E2C319F6B83900E1027E /* CoreGraphics.framework in Frameworks */,
 				A1628F1A19E5258B00FEBC0F /* MediaPlayer.framework in Frameworks */,
 				A1628F1919E5258100FEBC0F /* CoreData.framework in Frameworks */,
@@ -166,6 +260,8 @@
 				A13970B219DC354300C20C35 /* BookMarkedFilms.m */,
 				A1B5E2C419F6B8AC00E1027E /* SettingsViewController.h */,
 				A1B5E2C519F6B8AC00E1027E /* SettingsViewController.m */,
+				A1B5E30F19F7F9CA00E1027E /* StoresMapViewController.h */,
+				A1B5E31019F7F9CA00E1027E /* StoresMapViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +333,7 @@
 		A18C32D019D5B68100E452BB = {
 			isa = PBXGroup;
 			children = (
+				A1B5E2C719F7DE0200E1027E /* iAd.framework */,
 				A1B5E2C219F6B83900E1027E /* CoreGraphics.framework */,
 				A18C32DB19D5B68100E452BB /* TrailerTrail */,
 				A18C32F519D5B68100E452BB /* TrailerTrailTests */,
@@ -322,6 +419,8 @@
 		A18C336219D6BF0600E452BB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A1B5E31219F7FA0F00E1027E /* CustomMapCalloutView */,
+				A1B5E2CB19F7F94D00E1027E /* REVClusterMap */,
 				A1B5E2BB19F6A92700E1027E /* XCDFormInputAccessoryView */,
 				A13970AF19DAE68300C20C35 /* Ratings */,
 				18FA13CF19D9EBF000BB9F95 /* WK */,
@@ -338,6 +437,95 @@
 				A1B5E2BD19F6A92700E1027E /* XCDFormInputAccessoryView.m */,
 			);
 			path = XCDFormInputAccessoryView;
+			sourceTree = "<group>";
+		};
+		A1B5E2CB19F7F94D00E1027E /* REVClusterMap */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E2CC19F7F94D00E1027E /* MapDataModel.h */,
+				A1B5E2CD19F7F94D00E1027E /* MapDataModel.m */,
+				A1B5E2CE19F7F94D00E1027E /* Recources */,
+				A1B5E2E419F7F94D00E1027E /* REVAnnotationsCollection.h */,
+				A1B5E2E519F7F94D00E1027E /* REVAnnotationsCollection.m */,
+				A1B5E2E619F7F94D00E1027E /* REVClusterAnnotationView.h */,
+				A1B5E2E719F7F94D00E1027E /* REVClusterAnnotationView.m */,
+				A1B5E2E819F7F94D00E1027E /* REVClusterBlock.h */,
+				A1B5E2E919F7F94D00E1027E /* REVClusterBlock.m */,
+				A1B5E2EA19F7F94D00E1027E /* REVClusterManager.h */,
+				A1B5E2EB19F7F94D00E1027E /* REVClusterManager.m */,
+				A1B5E2EC19F7F94D00E1027E /* REVClusterMap.h */,
+				A1B5E2ED19F7F94D00E1027E /* REVClusterMapView.h */,
+				A1B5E2EE19F7F94D00E1027E /* REVClusterMapView.m */,
+				A1B5E2EF19F7F94D00E1027E /* REVClusterPin.h */,
+				A1B5E2F019F7F94D00E1027E /* REVClusterPin.m */,
+				A1B5E2F119F7F94D00E1027E /* REVMapViewController.h */,
+				A1B5E2F219F7F94D00E1027E /* REVMapViewController.m */,
+			);
+			path = REVClusterMap;
+			sourceTree = "<group>";
+		};
+		A1B5E2CE19F7F94D00E1027E /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E2CF19F7F94D00E1027E /* assets */,
+				A1B5E2D419F7F94D00E1027E /* Default-ipad-Landscape.png */,
+				A1B5E2D519F7F94D00E1027E /* Default-iphone.png */,
+				A1B5E2D619F7F94D00E1027E /* Default@2x-iphone.png */,
+				A1B5E2D719F7F94D00E1027E /* greyButton.png */,
+				A1B5E2D819F7F94D00E1027E /* greyButton@2x.png */,
+				A1B5E2D919F7F94D00E1027E /* greyButtonHighlight.png */,
+				A1B5E2DA19F7F94D00E1027E /* greyButtonHighlight@2x.png */,
+				A1B5E2DB19F7F94D00E1027E /* Icon-72.png */,
+				A1B5E2DC19F7F94D00E1027E /* Icon.png */,
+				A1B5E2DD19F7F94D00E1027E /* Icon@2x.png */,
+				A1B5E2DE19F7F94D00E1027E /* LocationBlue.png */,
+				A1B5E2DF19F7F94D00E1027E /* LocationBlue@2x.png */,
+				A1B5E2E019F7F94D00E1027E /* LocationGrey.png */,
+				A1B5E2E119F7F94D00E1027E /* LocationGrey@2x.png */,
+				A1B5E2E219F7F94D00E1027E /* LocationHeadingBlue.png */,
+				A1B5E2E319F7F94D00E1027E /* LocationHeadingBlue@2x.png */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		A1B5E2CF19F7F94D00E1027E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E2D019F7F94D00E1027E /* cluster.png */,
+				A1B5E2D119F7F94D00E1027E /* cluster@2x.png */,
+				A1B5E2D219F7F94D00E1027E /* pinpoint.png */,
+				A1B5E2D319F7F94D00E1027E /* pinpoint@2x.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		A1B5E31219F7FA0F00E1027E /* CustomMapCalloutView */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E31319F7FA0F00E1027E /* BasicMapAnnotation.h */,
+				A1B5E31419F7FA0F00E1027E /* BasicMapAnnotation.m */,
+				A1B5E31519F7FA0F00E1027E /* CallOutAnnotationVifew.h */,
+				A1B5E31619F7FA0F00E1027E /* CallOutAnnotationVifew.m */,
+				A1B5E31719F7FA0F00E1027E /* CalloutMapAnnotation.h */,
+				A1B5E31819F7FA0F00E1027E /* CalloutMapAnnotation.m */,
+				A1B5E31919F7FA0F00E1027E /* Image */,
+				A1B5E31C19F7FA0F00E1027E /* JingDianMapCell.h */,
+				A1B5E31D19F7FA0F00E1027E /* JingDianMapCell.m */,
+				A1B5E31E19F7FA0F00E1027E /* JingDianMapCell.xib */,
+				A1B5E31F19F7FA0F00E1027E /* MapViewController.xib */,
+				A1B5E32019F7FA0F00E1027E /* TheMapViewController.h */,
+				A1B5E32119F7FA0F00E1027E /* TheMapViewController.m */,
+			);
+			path = CustomMapCalloutView;
+			sourceTree = "<group>";
+		};
+		A1B5E31919F7FA0F00E1027E /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5E31A19F7FA0F00E1027E /* MuddDetail.jpeg */,
+				A1B5E31B19F7FA0F00E1027E /* pin.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		A1D3D24719D6D91800037215 /* JSONKit */ = {
@@ -432,10 +620,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B5E30019F7F94D00E1027E /* Icon.png in Resources */,
+				A1B5E30119F7F94D00E1027E /* Icon@2x.png in Resources */,
+				A1B5E30519F7F94D00E1027E /* LocationGrey@2x.png in Resources */,
 				A18C32E819D5B68100E452BB /* Main.storyboard in Resources */,
 				A18C32ED19D5B68100E452BB /* LaunchScreen.xib in Resources */,
 				A18C32EA19D5B68100E452BB /* Images.xcassets in Resources */,
+				A1B5E30619F7F94D00E1027E /* LocationHeadingBlue.png in Resources */,
+				A1B5E30319F7F94D00E1027E /* LocationBlue@2x.png in Resources */,
+				A1B5E30719F7F94D00E1027E /* LocationHeadingBlue@2x.png in Resources */,
+				A1B5E2F519F7F94D00E1027E /* cluster@2x.png in Resources */,
+				A1B5E32819F7FA0F00E1027E /* JingDianMapCell.xib in Resources */,
+				A1B5E32919F7FA0F00E1027E /* MapViewController.xib in Resources */,
+				A1B5E2FB19F7F94D00E1027E /* greyButton.png in Resources */,
+				A1B5E2FC19F7F94D00E1027E /* greyButton@2x.png in Resources */,
+				A1B5E2FE19F7F94D00E1027E /* greyButtonHighlight@2x.png in Resources */,
+				A1B5E32519F7FA0F00E1027E /* MuddDetail.jpeg in Resources */,
+				A1B5E30419F7F94D00E1027E /* LocationGrey.png in Resources */,
+				A1B5E30219F7F94D00E1027E /* LocationBlue.png in Resources */,
+				A1B5E2FA19F7F94D00E1027E /* Default@2x-iphone.png in Resources */,
+				A1B5E2FD19F7F94D00E1027E /* greyButtonHighlight.png in Resources */,
+				A1B5E2F919F7F94D00E1027E /* Default-iphone.png in Resources */,
+				A1B5E2F419F7F94D00E1027E /* cluster.png in Resources */,
+				A1B5E2F819F7F94D00E1027E /* Default-ipad-Landscape.png in Resources */,
+				A1B5E2F719F7F94D00E1027E /* pinpoint@2x.png in Resources */,
+				A1B5E2FF19F7F94D00E1027E /* Icon-72.png in Resources */,
+				A1B5E2F619F7F94D00E1027E /* pinpoint.png in Resources */,
 				18FA13D119D9ED5D00BB9F95 /* fillerati.txt in Resources */,
+				A1B5E32619F7FA0F00E1027E /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,10 +668,16 @@
 				A18C330C19D5C84C00E452BB /* Utilities.m in Sources */,
 				180FE99019D74BC9003638E9 /* BaseViewController.m in Sources */,
 				18FA13CB19D9EA2300BB9F95 /* WKAccessoryView.m in Sources */,
+				A1B5E2F319F7F94D00E1027E /* MapDataModel.m in Sources */,
 				A18C32E519D5B68100E452BB /* ViewController.m in Sources */,
+				A1B5E32719F7FA0F00E1027E /* JingDianMapCell.m in Sources */,
 				A13970AE19DAE67500C20C35 /* RatingView.m in Sources */,
+				A1B5E30A19F7F94D00E1027E /* REVClusterBlock.m in Sources */,
+				A1B5E30E19F7F94D00E1027E /* REVMapViewController.m in Sources */,
 				A18C330919D5C73100E452BB /* BaseEntity.m in Sources */,
+				A1B5E30C19F7F94D00E1027E /* REVClusterMapView.m in Sources */,
 				A1B5E2C119F6A94800E1027E /* DemoViewController.m in Sources */,
+				A1B5E31119F7F9CA00E1027E /* StoresMapViewController.m in Sources */,
 				A18FBC3319D983D900F57B51 /* FilmListViewController.m in Sources */,
 				A18C330419D5B99C00E452BB /* Film.m in Sources */,
 				18FA13C819D9EA0200BB9F95 /* WKVerticalScrollBar.m in Sources */,
@@ -468,12 +686,20 @@
 				18FA13BF19D9E96100BB9F95 /* FilmDetailViewController.m in Sources */,
 				A13BAD3C19D6CB6C00FB4C7F /* FilmDataService.m in Sources */,
 				A18C32E219D5B68100E452BB /* AppDelegate.m in Sources */,
+				A1B5E30D19F7F94D00E1027E /* REVClusterPin.m in Sources */,
 				A13970B319DC354300C20C35 /* BookMarkedFilms.m in Sources */,
 				18FA13CE19D9EB5700BB9F95 /* SWRevealViewController.m in Sources */,
 				A18C331119D5CCF200E452BB /* PreviewFilm.m in Sources */,
+				A1B5E32A19F7FA0F00E1027E /* TheMapViewController.m in Sources */,
+				A1B5E32219F7FA0F00E1027E /* BasicMapAnnotation.m in Sources */,
+				A1B5E30919F7F94D00E1027E /* REVClusterAnnotationView.m in Sources */,
 				A1628F1D19E526CC00FEBC0F /* CoreDataModel.xcdatamodeld in Sources */,
+				A1B5E32319F7FA0F00E1027E /* CallOutAnnotationVifew.m in Sources */,
 				1860563219EF0FAB0019E689 /* FBLoginViewController.m in Sources */,
+				A1B5E30B19F7F94D00E1027E /* REVClusterManager.m in Sources */,
+				A1B5E32419F7FA0F00E1027E /* CalloutMapAnnotation.m in Sources */,
 				18FA13C519D9E9D500BB9F95 /* WKTextDemoView.m in Sources */,
+				A1B5E30819F7F94D00E1027E /* REVAnnotationsCollection.m in Sources */,
 				A1B5E2BE19F6A92700E1027E /* XCDFormInputAccessoryView.m in Sources */,
 				180FE99419D75000003638E9 /* MBProgressHUD.m in Sources */,
 				A1D3D24C19D6D91800037215 /* CHANGELOG.md in Sources */,

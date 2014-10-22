@@ -9,8 +9,9 @@
 #import "BaseViewController.h"
 #import "RatingView.h"
 #import "PreviewFilm.h"
+#import <iAd/iAd.h>
 
-@interface FilmListViewController : BaseViewController
+@interface FilmListViewController : BaseViewController <ADBannerViewDelegate>
 {
     RatingView *starView;
     NSString *noResultText;
@@ -18,7 +19,13 @@
     NSString *imgGoogleName;
     BOOL isSearching;
 
+    //banner object view
+    ADBannerView *bannerView;
+
 }
+//banner property
+@property (nonatomic, retain) ADBannerView *bannerView;
+
 @property(nonatomic,weak)IBOutlet UITableView *myTableView;
 @property (weak , nonatomic) IBOutlet UISearchBar *searchBar;
 
@@ -27,4 +34,8 @@
 -(void)ratingChanged:(float)newRating;
 
 -(PreviewFilm *)objectInListAtIndex:(NSUInteger)theIndex;
+
+
+
+
 @end
